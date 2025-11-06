@@ -11,17 +11,18 @@ jobs:
   build-sut:
     name: Build SUT
     runs-on: lvl1
+    env:
+      # actions/cache, actions/upload-artifact ..SSL validation off
+      NODE_TLS_REJECT_UNAUTHORIZED: 0 
     steps:
+    
       - name: Checkout repository
-        uses: actions/checkout@v4
-        env:
-          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt          
+        uses: actions/checkout@v4         
 
       - name: Cache SUT
         id: cache-sut
         uses: actions/cache@v4
-        env:
-          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt         
+        
         with:
           path: |
             .\ECU\Level1SUT
@@ -40,8 +41,6 @@ jobs:
       - name: Export ECU Logs
         uses: actions/upload-artifact@v4
         if: always()
-        env:
-          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
         with:
           name: ECU_Logs
           path: .\ECU\BFC\Log
@@ -77,8 +76,6 @@ jobs:
       - name: Export test reports
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
-        env:
-          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
         with:
           name: Test Reports CANoe-vECU lvl1
           path: |
@@ -87,9 +84,7 @@ jobs:
 
       - name: Upload log files
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
-        env:
-          NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt         
+        uses: actions/upload-artifact@v4       
         with:
           name: Log Files ${{ matrix.TESTNAME }}
           path: .\simulation\*.txt
