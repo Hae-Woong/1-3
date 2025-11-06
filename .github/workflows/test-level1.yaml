@@ -6,7 +6,11 @@ on:
       - main
   pull_request:
   workflow_dispatch:
-
+ 
+permissions:
+  checks: write
+  contents: read 
+  
 jobs:
   build-sut:
     name: Build SUT
