@@ -53,11 +53,11 @@ jobs:
     steps:
       - name: Make environment
         run: |
-            &"$env:CANoe4SWSE_InstallDir64\environment-make.exe" -o .\compiled-environment-and-tests -A Win32 -s L1_vECU .\environment-make\venvironment.yaml
+            &"$env:CANoeSE_InstallDir64\environment-make.exe" -o .\compiled-environment-and-tests -A Win32 -s L1_vECU .\environment-make\venvironment.yaml
 
       - name: Make test units
         run: |
-            & "$env:CANoe4SWSE_InstallDir64\test-unit-make.exe" -e .\compiled-environment-and-tests\L1_vECU.venvironment -o .\compiled-environment-and-tests .\tests\auto\auto.vtestunit.yaml .\tests\basic\basic.vtestunit.yaml    
+            & "$env:CANoeSE_InstallDir64\test-unit-make.exe" -e .\compiled-environment-and-tests\L1_vECU.venvironment -o .\compiled-environment-and-tests .\tests\auto\auto.vtestunit.yaml .\tests\basic\basic.vtestunit.yaml    
 
   run-tests-simulation:
     name: Run simulation
@@ -70,8 +70,8 @@ jobs:
     steps:
       - name: Run CANoe4SW Server Edition
         run : |
-          & "$env:CANoe4SWSE_InstallDir64\canoe4sw-se.exe" .\compiled-environment-and-tests\L1_vECU.venvironment -d .\simulation --win32 --port-rtk-api none --test-unit .\compiled-environment-and-tests\${{ matrix.TESTNAME }}.vtestunit;
-          Write-Host "CANoe4SW Server Edition returned exit code $LASTEXITCODE"
+          & "$env:CANoeSE_InstallDir64\canoe-se.exe" .\compiled-environment-and-tests\L1_vECU.venvironment -d .\simulation --win32 --port-rtk-api none --test-unit .\compiled-environment-and-tests\${{ matrix.TESTNAME }}.vtestunit;
+          Write-Host "CANoe Server Edition returned exit code $LASTEXITCODE"
 
       - name: Export test reports
         if: ${{ !cancelled() }}
