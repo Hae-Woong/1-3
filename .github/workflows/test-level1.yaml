@@ -13,7 +13,7 @@ jobs:
     runs-on: lvl1
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         env:
           NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt          
 
@@ -38,7 +38,7 @@ jobs:
           } 
 
       - name: Export ECU Logs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: always()
         env:
           NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
@@ -76,7 +76,7 @@ jobs:
 
       - name: Export test reports
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         env:
           NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt 
         with:
@@ -87,7 +87,7 @@ jobs:
 
       - name: Upload log files
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         env:
           NODE_EXTRA_CA_CERTS: .\certs\Vector_Root_2.0.crt         
         with:
@@ -108,8 +108,8 @@ jobs:
           }
 
       - name: Display test results
-        uses: actions-mirror/dorny-test-reporter@v1.9.1
-       # uses: dorny-test-reporter@v1.9.1
+       # uses: actions-mirror/dorny-test-reporter@v1.9.1
+        uses: dorny/test-reporter@v1.9.1
         with:
           name: vECU lvl1 Test Results                   # Name of the check run which will be created
           path: "./simulation/TestReports/*_xunit.xml"   # Path to test results
