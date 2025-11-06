@@ -40,7 +40,6 @@ jobs:
             ./ECU/BFC/Appl/GenDataVTT
           key: ${{ hashFiles('./ECU/BFC/LightControl.dpa','./ECU/BFC/Config/**','./ECU/LightControl-level3.vttmake') }}
 
-        
        # VttMake Path
       - name: Add VttMake to PATH
         shell: pwsh
