@@ -1,0 +1,28 @@
+version 2.0;
+
+import module "Mapping";
+import module "CAPL";
+
+namespace ApplicationObjects
+{
+
+  enum eHeadlightSwitch : uint8
+  {
+    OFF = 0,
+    ON = 1,
+    AUTO = 2,
+  }
+
+  [Binding="Mapping"]
+  [CommunicationPattern=SendReceive]
+  interface ILightControl
+  {
+    provided data eHeadlightSwitch SwitchState;
+    [Binding="CAPL"]
+    provided data float LightIntensity;
+
+    consumed data int32 HeadLightLamp;
+  }
+
+  ILightControl Mapping;
+}

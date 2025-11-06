@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules version="1" >
+<module interface="0005" dpramStartAddress="1000" productCode="0003EC01" dpramLength="1078" name="IBCVT1004" VDID="D0A78C02AA4F3A163902D9D33E79BEB500000000" >
+<values>
+<block start="44" len="D0" type="read" sync="yes">
+<v id="00000100" b="44" />
+<v id="00000300" b="46" />
+<v id="00000500" b="48" />
+<v id="00000700" b="4A" />
+<v id="00003800" b="4C" />
+<v id="00000200" b="4C" />
+<v id="00003900" b="6C" />
+<v id="00000400" b="6C" />
+<v id="00003A00" b="8C" />
+<v id="00000600" b="8C" />
+<v id="00003B00" b="AC" />
+<v id="00000800" b="AC" />
+<v id="00000201" b="CC" />
+<v id="00000401" b="DC" />
+<v id="00000601" b="EC" />
+<v id="00000801" b="FC" />
+<v id="00003300" b="10C" />
+<v id="00003400" b="10C" />
+</block>
+<block start="2B4" len="130" type="read" sync="yes">
+<v id="00000900" b="2B4" />
+<v id="00000D00" b="2B8" />
+<v id="00001100" b="2BC" />
+<v id="00001500" b="2C0" />
+<v id="00000A00" b="2C4" />
+<v id="00000E00" b="2C6" />
+<v id="00001200" b="2C8" />
+<v id="00001600" b="2CA" />
+<v id="00000B00" b="2CC" />
+<v id="00000F00" b="2CE" />
+<v id="00001300" b="2D0" />
+<v id="00001700" b="2D2" />
+<v id="00000C00" b="2D4" />
+<v id="00001000" b="2D6" />
+<v id="00001400" b="2D8" />
+<v id="00001800" b="2DA" />
+<v id="00000202" b="2DC" />
+<v id="00000402" b="2DE" />
+<v id="00000602" b="2E0" />
+<v id="00000802" b="2E2" />
+<v id="00001900" b="2E4" />
+<v id="00001A00" b="2E6" />
+<v id="00001B00" b="2E8" />
+<v id="00001C00" b="2EA" />
+<v id="00003C00" b="2EC" />
+<v id="00005C00" b="2EC:0" />
+<v id="00003D00" b="2F4" />
+<v id="00005D00" b="2F4:0" />
+<v id="00003E00" b="2FC" />
+<v id="00005E00" b="2FC:0" />
+<v id="00003F00" b="304" />
+<v id="00005F00" b="304:0" />
+<v id="00001D00" b="30C" />
+<v id="00001E00" b="310" />
+<v id="00001F00" b="314" />
+<v id="00002000" b="318" />
+<v id="00002100" b="31C" />
+<v id="00002200" b="320" />
+<v id="00002300" b="324" />
+<v id="00002400" b="328" />
+<v id="00004000" b="32C" />
+<v id="00004100" b="330" />
+<v id="00004200" b="334" />
+<v id="00004300" b="338" />
+<v id="00004400" b="33C" />
+<v id="00004500" b="340" />
+<v id="00004600" b="344" />
+<v id="00004700" b="348" />
+<v id="00003500" b="34C" />
+<v id="00002500" b="354" />
+<v id="00002600" b="356" />
+<v id="00002700" b="358" />
+<v id="00002800" b="35A" />
+<v id="00002900" b="35C" />
+<v id="00002A00" b="35E" />
+<v id="00002B00" b="360" />
+<v id="00002C00" b="362" />
+<v id="00004800" b="364" />
+<v id="00004900" b="36C" />
+<v id="00004A00" b="374" />
+<v id="00004B00" b="37C" />
+<v id="00004C00" b="384" />
+<v id="00004D00" b="38C" />
+<v id="00004E00" b="394" />
+<v id="00004F00" b="39C" />
+<v id="00005000" b="3A4" />
+<v id="00006000" b="3A4" />
+<v id="00005100" b="3AC" />
+<v id="00006100" b="3AC" />
+<v id="00005200" b="3B4" />
+<v id="00006200" b="3B4" />
+<v id="00005300" b="3BC" />
+<v id="00006300" b="3BC" />
+<v id="00005400" b="3C4" />
+<v id="00006400" b="3C4" />
+<v id="00005500" b="3CC" />
+<v id="00006500" b="3CC" />
+<v id="00005600" b="3D4" />
+<v id="00006600" b="3D4" />
+<v id="00005700" b="3DC" />
+<v id="00006700" b="3DC" />
+</block>
+<block start="644" len="38" type="read" sync="yes">
+<v id="00000203" b="644" />
+<v id="00000403" b="646" />
+<v id="00000603" b="648" />
+<v id="00000803" b="64A" />
+<v id="00001901" b="64C" />
+<v id="00001A01" b="64E" />
+<v id="00001B01" b="650" />
+<v id="00001C01" b="652" />
+<v id="00003600" b="654" />
+<v id="00000204" b="65C" />
+<v id="00000404" b="65E" />
+<v id="00000604" b="660" />
+<v id="00000804" b="662" />
+<v id="00001902" b="664" />
+<v id="00001A02" b="666" />
+<v id="00001B02" b="668" />
+<v id="00001C02" b="66A" />
+<v id="00003700" b="66C" />
+<v id="00005800" b="674" />
+<v id="00005900" b="676" />
+<v id="00005A00" b="678" />
+<v id="00005B00" b="67A" />
+</block>
+<block start="6EC" len="D4" type="write" sync="yes">
+<v id="80000100" b="6EC:0" l="1" />
+<v id="80000200" b="6EC:1" l="1" />
+<v id="80000300" b="6EC:2" l="1" />
+<v id="80000400" b="6EC:3" l="1" />
+<v id="80000500" b="6EC:4" l="1" />
+<v id="80000600" b="6EC:5" l="1" />
+<v id="80000700" b="6EC:6" l="1" />
+<v id="80000800" b="6EC:7" l="1" />
+<v id="80000900" b="6ED:0" l="1" />
+<v id="80000A00" b="6ED:1" l="1" />
+<v id="80000B00" b="6ED:2" l="1" />
+<v id="80000C00" b="6ED:3" l="1" />
+<v id="80000D00" b="6ED:4" l="1" />
+<v id="80000E00" b="6ED:5" l="1" />
+<v id="80000F00" b="6ED:6" l="1" />
+<v id="80001000" b="6ED:7" l="1" />
+<v id="80001100" b="6EE:0" l="1" />
+<v id="80001200" b="6EE:1" l="1" />
+<v id="80001300" b="6EE:2" l="1" />
+<v id="80001400" b="6EE:3" l="1" />
+<v id="80001500" b="6EE:4" l="1" />
+<v id="80001600" b="6EE:5" l="1" />
+<v id="80001700" b="6EE:6" l="1" />
+<v id="80001800" b="6EE:7" l="1" />
+<v id="80001900" b="6EF:0" l="1" />
+<v id="80001A00" b="6EF:1" l="1" />
+<v id="80001B00" b="6EF:2" l="1" />
+<v id="80001C00" b="6EF:3" l="1" />
+<v id="80001D00" b="6EF:4" l="1" />
+<v id="80001E00" b="6EF:5" l="1" />
+<v id="80001F00" b="6EF:6" l="1" />
+<v id="80002000" b="6EF:7" l="1" />
+<v id="80002100" b="6F0:0" l="1" />
+<v id="80002200" b="6F0:1" l="1" />
+<v id="80002300" b="6F0:2" l="1" />
+<v id="80002400" b="6F0:3" l="1" />
+<v id="80002500" b="6F1:0" l="2" />
+<v id="80002600" b="6F1:2" l="2" />
+<v id="80002700" b="6F1:4" l="2" />
+<v id="80002800" b="6F1:6" l="2" />
+<v id="80004100" b="6F2:0" l="2" />
+<v id="80004200" b="6F2:2" l="2" />
+<v id="80004300" b="6F2:4" l="2" />
+<v id="80004400" b="6F2:6" l="2" />
+<v id="80002900" b="6F4" l="10" d="1027" />
+<v id="80002A00" b="6F6" l="10" d="1027" />
+<v id="80002B00" b="6F8" l="10" d="1027" />
+<v id="80002C00" b="6FA" l="10" d="1027" />
+<v id="80002D00" b="6FC" l="10" />
+<v id="80002E00" b="6FE" l="10" />
+<v id="80002F00" b="700" l="10" />
+<v id="80003000" b="702" l="10" />
+<v id="80003100" b="704" l="8" />
+<v id="80003200" b="705" l="8" />
+<v id="80003300" b="706" l="8" />
+<v id="80003400" b="707" l="8" />
+<v id="80003500" b="708" l="8" d="13" />
+<v id="80003600" b="709" l="8" d="13" />
+<v id="80003700" b="70A" l="8" d="13" />
+<v id="80003800" b="70B" l="8" d="13" />
+<v id="80003900" b="70C" l="10" d="C409" />
+<v id="80003A00" b="70E" l="10" d="C409" />
+<v id="80003B00" b="710" l="10" d="C409" />
+<v id="80003C00" b="712" l="10" d="C409" />
+<v id="80003D00" b="714" l="8" />
+<v id="80003E00" b="715" l="8" />
+<v id="80003F00" b="716" l="8" />
+<v id="80004000" b="717" l="8" />
+<v id="80004500" b="718" l="10" d="6400" />
+<v id="80004600" b="71A" l="10" d="6400" />
+<v id="80004700" b="71C" l="10" d="6400" />
+<v id="80004800" b="71E" l="10" d="6400" />
+<v id="80004900" b="720" l="8" />
+<v id="80004A00" b="721" l="8" />
+<v id="80004B00" b="722" l="8" />
+<v id="80004C00" b="723" l="8" />
+<v id="80004D00" b="724" l="20" />
+<v id="80004E00" b="728" l="20" />
+<v id="80004F00" b="72C" l="20" />
+<v id="80005000" b="730" l="20" />
+<v id="80005100" b="734" l="20" />
+<v id="80005200" b="738" l="20" />
+<v id="80005300" b="73C" l="20" />
+<v id="80005400" b="740" l="20" />
+<v id="80005500" b="744" l="20" />
+<v id="80005600" b="748" l="20" />
+<v id="80005700" b="74C" l="20" />
+<v id="80005800" b="750" l="20" />
+<v id="80005900" b="754" l="20" />
+<v id="80005A00" b="758" l="20" />
+<v id="80005B00" b="75C" l="20" />
+<v id="80005C00" b="760" l="20" />
+<v id="80005D00" b="764" l="10" />
+<v id="80005E00" b="766" l="10" />
+<v id="80005F00" b="768" l="10" />
+<v id="80006000" b="76A" l="10" />
+<v id="80006100" b="76C" l="10" />
+<v id="80006200" b="76E" l="10" />
+<v id="80006300" b="770" l="10" />
+<v id="80006400" b="772" l="10" />
+<v id="80006500" b="774" l="10" />
+<v id="80006600" b="776" l="10" />
+<v id="80006700" b="778" l="10" />
+<v id="80006800" b="77A" l="10" />
+<v id="80006900" b="77C" l="10" />
+<v id="80006A00" b="77E" l="10" />
+<v id="80006B00" b="780" l="10" />
+<v id="80006C00" b="782" l="10" />
+<v id="80006D00" b="784" l="8" />
+<v id="80006E00" b="785" l="8" />
+<v id="80006F00" b="786" l="8" />
+<v id="80007000" b="787" l="8" />
+<v id="80007100" b="788" l="8" />
+<v id="80007200" b="789" l="8" />
+<v id="80007300" b="78A" l="8" />
+<v id="80007400" b="78B" l="8" />
+<v id="80007500" b="78C" l="20" />
+<v id="80007600" b="790" l="20" />
+<v id="80007700" b="794" l="20" />
+<v id="80007800" b="798" l="20" />
+<v id="80007900" b="79C" l="20" />
+<v id="80007A00" b="7A0" l="20" />
+<v id="80007B00" b="7A4" l="20" />
+<v id="80007C00" b="7A8" l="20" />
+<v id="80007D00" b="7AC" l="8" />
+<v id="80007E00" b="7AD" l="8" />
+<v id="80007F00" b="7AE" l="8" />
+<v id="80008000" b="7AF" l="8" />
+<v id="80008100" b="7B0" l="8" />
+<v id="80008200" b="7B1" l="8" />
+<v id="80008300" b="7B2" l="8" />
+<v id="80008400" b="7B3" l="8" />
+<v id="80008500" b="7B4" l="8" />
+<v id="80008600" b="7B5" l="8" />
+<v id="80008700" b="7B6" l="8" />
+<v id="80008800" b="7B7" l="8" />
+<v id="80008900" b="7B8" l="8" />
+<v id="80008A00" b="7B9" l="8" />
+<v id="80008B00" b="7BA" l="8" />
+<v id="80008C00" b="7BB" l="8" />
+<v id="80008D00" b="7BC" l="8" />
+<v id="80008E00" b="7BD:0" l="1" />
+<v id="80008F00" b="7BD:1" l="1" />
+<v id="80009000" b="7BD:2" l="1" />
+<v id="80009100" b="7BD:3" l="1" />
+</block>
+<freeValues>
+<v id="40000500" b="30" />
+<v id="40000100" b="34" />
+<v id="40000200" b="38" />
+<v id="40000300" b="3C" />
+<v id="40000400" b="40" />
+<v id="00002D00" b="968" />
+<v id="00002E00" b="96C" />
+<v id="00002F00" b="970" />
+<v id="00003000" b="974" />
+<v id="00003100" b="978" />
+<v id="00003200" b="97C" />
+</freeValues>
+</values>
+<customValues>
+<readBlock len="0024" start="1000" sync="true" >
+<readValue id="02000900" b="1000" >
+<dataType>
+<timestamp>
+</timestamp>
+</dataType>
+</readValue>
+<readValue id="02000000" b="1008" name="IBCActive" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000100" b="1008:01" name="IBCReady" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000200" b="1009" name="IBCError" >
+<dataType>
+<integer bitLength="0008" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000300" b="100C" name="FromVT1104" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000400" b="1010" name="FromVT2004" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000500" b="1014" name="FromVT2516" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000600" b="1018" name="FromVT2710" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000700" b="101C" name="FromVT2816" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000800" b="1020" name="FromVT2848" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+</readBlock>
+<writeBlock len="0004" start="106C" sync="true" >
+<writeValue id="82000000" b="106C" name="OutputVT1004" d="FFFFFFFF" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+</writeBlock>
+</customValues>
+</module></modules>

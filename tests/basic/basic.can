@@ -1,0 +1,61 @@
+/*@!Encoding:65001*/
+includes
+{
+}
+
+variables
+{
+}
+
+export testcase CheckTurnOn(double lightIntensity)
+{
+  long result;
+
+  $ApplicationObjects::Mapping.LightIntensity = lightIntensity;
+  testWaitForTimeout(1500);
+  SwitchOffAndWaitForHeadlight();
+  testWaitForTimeout(1500);
+  SwitchOnAndWaitForHeadlight();
+  testWaitForTimeout(1500);
+  TestStepPass("Headlight switched on");
+}
+
+export testcase CheckTurnOff(double lightIntensity)
+{
+  $ApplicationObjects::Mapping.LightIntensity = lightIntensity;
+  testWaitForTimeout(1500);
+  SwitchOnAndWaitForHeadlight();
+  testWaitForTimeout(1500);
+  SwitchOffAndWaitForHeadlight();
+  testWaitForTimeout(1500);
+
+  TestStepPass("Headlight switched off");
+}
+
+void SwitchOnAndWaitForHeadlight()
+{
+  long result;
+
+  $ApplicationObjects::Mapping.SwitchState= ApplicationObjects::eHeadlightSwitch::`ON;
+  result = TestWaitForImplValueSInt(ApplicationObjects::Mapping.HeadLightLamp, ApplicationObjects::eHeadlightSwitch::`ON, 500);
+
+  if ( result < 1 )
+  {
+    TestStepFail("Headlight not switched on");
+    return;
+  }
+}
+
+void SwitchOffAndWaitForHeadlight()
+{
+  long result;
+
+  $ApplicationObjects::Mapping.SwitchState = ApplicationObjects::eHeadlightSwitch::`OFF;
+  result = TestWaitForImplValueSInt(ApplicationObjects::Mapping.HeadLightLamp, ApplicationObjects::eHeadlightSwitch::`OFF, 500);
+
+  if ( result < 1 )
+  {
+    TestStepFail("Headlight not switched off");
+    return;
+  }
+}

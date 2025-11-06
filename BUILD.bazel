@@ -1,0 +1,57 @@
+load("@rules_cc//cc:defs.bzl", "cc_toolchain")
+load(
+    "//toolchains/tasking:defs.bzl",
+    "tasking_cc_toolchain_config_windows",
+)
+
+package(default_visibility = ["//visibility:public"])
+
+filegroup(
+    name = "tasking_windows_group",
+    srcs = [
+        "//toolchains/tasking:tasking_compiler_wrapper.bat",
+        "//toolchains/tasking:tasking_linker_wrapper.bat",
+        "@tasking_license//:package",
+        "@tasking_windows//:package",
+    ],
+)
+
+tasking_cc_toolchain_config_windows(
+    name = "tasking_windows_toolchain_config",
+    compiler_package = "@tasking_windows",
+    licensing_options_file = "@tasking_license//:licopt.txt",
+)
+
+cc_toolchain(
+    name = "tasking_windows_cc_toolchain",
+    all_files = ":tasking_windows_group",
+    compiler_files = ":tasking_windows_group",
+    dwp_files = ":tasking_windows_group",
+    linker_files = ":tasking_windows_group",
+    objcopy_files = ":tasking_windows_group",
+    strip_files = ":tasking_windows_group",
+    toolchain_config = ":tasking_windows_toolchain_config",
+    toolchain_identifier = "tasking-toolchain",
+)
+
+toolchain(
+    name = "tasking_windows",
+    exec_compatible_with = [
+        "@platforms//os:windows",
+    ],
+    target_compatible_with = [
+        "@platforms//cpu:x86_64",
+    ],
+    toolchain = ":tasking_windows_cc_toolchain",
+    toolchain_type = "@bazel_tools//tools/cpp:toolchain_type",
+)
+
+alias(
+    name = "BFC",
+    actual = "//ECU/BFC/Appl:BFC",
+)
+
+alias(
+    name = "BFC.elf",
+    actual = "//ECU/BFC/Appl:BFC.elf",
+)

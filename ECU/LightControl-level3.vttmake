@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BuildSpecification xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="6.2">
+  <Settings>
+    <ProjectName>LightControl</ProjectName>
+  </Settings>
+  <BuildDpa>
+    <DpaPath>.\BFC\LightControl.dpa</DpaPath>
+    <VsSolutionPath>Solution\LightControl.sln</VsSolutionPath>
+    <ExecutionEnvironment>
+      <CommunicationInterface>Classic</CommunicationInterface>
+      <DataTypesNamespace>$(PROJECTNAME)DT</DataTypesNamespace>
+      <DataObjectsNamespace>$(PROJECTNAME)DO</DataObjectsNamespace>
+    </ExecutionEnvironment>
+    <BuildSettings>
+      <VerboseLevel>Medium</VerboseLevel>
+      <CANoeEmuPathOption>BswPackage</CANoeEmuPathOption>
+      <SutOutputDir>Level3SUT</SutOutputDir>
+    </BuildSettings>
+    <RuntimeSettings>
+      <AutostartEcu>true</AutostartEcu>
+    </RuntimeSettings>
+    <GenerateRte />
+    <GenerateBsw />
+    <GenerateVcxProject>
+      <VsSolutionGuid>9B391FDB-5417-43CA-8AAB-31A81BDB9DCB</VsSolutionGuid>
+      <TargetPlatform>Windows_x86</TargetPlatform>
+      <VcxProjectGuid>85982F68-DE6E-45BF-A379-39596671FF5D</VcxProjectGuid>
+      <SourceFiles>
+        <File>.\BFC\Appl\Source\BSW_Handler.c</File>
+        <File>.\BFC\Appl\Source\IoHwAb.c</File>
+        <File>.\BFC\Appl\Source\Vtt_stubs.c</File>
+        <File>.\BFC\Appl\Source\BrsMainVTT.c</File>
+        <File>.\BFC\Appl\Source\LightCtrl.c</File>
+        <File>..\..\BSW\ThirdParty\Mcal_Tc3xx\Supply\MC-ISAR_AS440_TC3xx_BASIC_2.30.0\McIsar\Src\Mcal\Tricore\Fee\ssc\src\Fee.c</File>
+        <File>.\BFC\Appl\Source\Dcm_Callout_Stubs.c</File>
+        <File>.\BFC\Appl\GenDataVtt\src\Fee_PBcfg.c</File>
+        <File>.\BFC\Appl\GenDataVtt\Fls_17_Dmu.c</File>
+      </SourceFiles>
+      <IncludeFolders>
+        <IncludeFolder Configuration="All">.\BFC\Appl\GenDataVtt</IncludeFolder>
+        <IncludeFolder Configuration="All">.\BFC\Appl\IncludeVtt</IncludeFolder>
+        <IncludeFolder Configuration="All">..\..\BSW\ThirdParty\Mcal_Tc3xx\Supply\MC-ISAR_AS440_TC3xx_BASIC_2.30.0\McIsar\Src\Mcal\Tricore\Fee\ssc\inc</IncludeFolder>
+        <IncludeFolder Configuration="All">.\BFC\Appl\GenDataVtt\inc</IncludeFolder>
+      </IncludeFolders>
+      <PreprocessorDefinitions>
+        <PreprocessorDefinition Configuration="Release">VTT_ENABLE_CUSTOMVARS</PreprocessorDefinition>
+        <PreprocessorDefinition Configuration="Release">LEVEL3_vECU</PreprocessorDefinition>
+        <PreprocessorDefinition Configuration="Debug">VTT_ENABLE_CUSTOMVARS</PreprocessorDefinition>
+        <PreprocessorDefinition Configuration="Debug">LEVEL3_vECU</PreprocessorDefinition>
+      </PreprocessorDefinitions>
+    </GenerateVcxProject>
+    <BuildVsSolution>
+      <VsConfiguration>Release</VsConfiguration>
+    </BuildVsSolution>
+    <GenerateCsvFile />
+    <GenerateZip />
+  </BuildDpa>
+</BuildSpecification>

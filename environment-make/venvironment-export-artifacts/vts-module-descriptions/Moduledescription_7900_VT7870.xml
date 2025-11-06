@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules version="2" >
+<module interface="0001" dpramStartAddress="1000" productCode="001EDC00" dpramLength="0100" name="VT7870" MDID="21A1E91AB07461C31386F26C0384BBDB00000000" >
+<values>
+<readBlock len="0018" start="0040" sync="true" >
+<readValue id="00000800" b="0040" >
+<dataType>
+<timestamp>
+</timestamp>
+</dataType>
+</readValue>
+<readValue id="00000000" b="0048" name="MeasFrequency" >
+<dataType>
+<integer bitLength="0020" unsigned="true" floatOutput="true" >
+<scaling>
+<standardScaling>
+<scale>0.001000000047</scale><min>800.000000000000</min><max>1200.000000000000</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</readValue>
+<readValue id="00000100" b="004C" name="MeasDutyCycle" >
+<dataType>
+<integer bitLength="0010" unsigned="true" floatOutput="true" >
+<scaling>
+<standardScaling>
+<scale>0.009999999776</scale><min>0.000000000000</min><max>100.000000000000</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</readValue>
+<readValue id="00000200" b="004E" name="MeasVoltageHigh" >
+<dataType>
+<integer bitLength="0010" unsigned="false" floatOutput="true" >
+<scaling>
+<standardScaling>
+<scale>0.001000000047</scale><min>-15.000000000000</min><max>15.000000000000</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</readValue>
+<readValue id="00000300" b="0050" name="MeasVoltageLow" >
+<dataType>
+<integer bitLength="0010" unsigned="false" floatOutput="true" >
+<scaling>
+<standardScaling>
+<scale>0.001000000047</scale><min>-15.000000000000</min><max>15.000000000000</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</readValue>
+<readValue id="00000400" b="0052" name="MeasPPVoltage" >
+<dataType>
+<integer bitLength="0010" unsigned="false" floatOutput="true" >
+<scaling>
+<standardScaling>
+<scale>0.001000000047</scale><min>0.000000000000</min><max>5.000000000000</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</readValue>
+</readBlock>
+<writeBlock len="001C" start="0088" sync="true" >
+<writeValue id="80003200" b="0088" name="Relay_K2" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003300" b="0088:01" name="Relay_K6" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003400" b="0088:02" name="Relay_K1" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003500" b="0088:03" name="Relay_K7" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003600" b="0088:04" name="Relay_K8" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003700" b="0088:05" name="Relay_K4" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003800" b="0088:06" name="Relay_K3" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003900" b="0088:07" name="Relay_K5" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003A00" b="0089" name="Relay_K32" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003B00" b="0089:01" name="Relay_K33" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003C00" b="0089:02" name="Relay_K34" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003D00" b="0089:03" name="Relay_K35" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003E00" b="0089:04" name="Relay_K36" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80003F00" b="0089:05" name="Relay_K37" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004000" b="0089:06" name="Relay_K23" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004100" b="0089:07" name="Relay_K26" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004200" b="008A" name="Relay_K27" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004300" b="008A:01" name="Relay_K24" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004400" b="008A:02" name="Relay_K25" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004500" b="008A:03" name="Relay_K28" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004600" b="008A:04" name="Relay_K22" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004700" b="008A:05" name="Relay_K9" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004800" b="008A:06" name="Relay_K14" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004900" b="008A:07" name="Relay_K13" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004A00" b="008B" name="Relay_K29" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004B00" b="008B:01" name="Unused1" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004C00" b="008B:02" name="Unused2" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004D00" b="008B:03" name="Unused3" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004E00" b="008B:04" name="Relay_K11" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80004F00" b="008B:05" name="Relay_K12" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80005000" b="008B:06" name="Relay_K18" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80005100" b="008B:07" name="Relay_K16" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80005200" b="008C" name="Relay_K17" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80005300" b="008C:01" name="Relay_K20" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80005400" b="008C:02" name="Relay_K19" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80005500" b="008C:03" name="Relay_K21" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80005600" b="008C:04" name="Relay_K15" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80005700" b="008C:05" name="Relay_K10" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80005800" b="008C:06" name="Relay_K31" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80005900" b="008C:07" name="Relay_K30" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000000" b="0090" name="StimFrequency" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="true" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>0.001000000047</scale><min>0.000000000000</min><max>1200.000000000000</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000100" b="0094" name="StimDutyCycle" d="0000" >
+<dataType>
+<integer bitLength="0010" unsigned="true" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>0.009999999776</scale><min>0.000000000000</min><max>100.000000000000</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000200" b="0096" name="StimVoltageHigh" d="E02E" >
+<dataType>
+<integer bitLength="0010" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>0.001000000047</scale><min>-15.000000000000</min><max>15.000000000000</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000300" b="0098" name="StimVoltageLow" d="20D1" >
+<dataType>
+<integer bitLength="0010" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>0.001000000047</scale><min>-15.000000000000</min><max>15.000000000000</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000400" b="00A0" name="RS232_Tx" d="01" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000500" b="00A0:01" name="RS232_DTR" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000600" b="00A0:02" name="RS232_RTS" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000700" b="00A0:03" name="Unused4" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+</writeBlock>
+</values>
+</module></modules>

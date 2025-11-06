@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectModel xmlns:i="http://www.w3.org/2001/XMLSchema-instance" z:Id="1" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns="http://schemas.datacontract.org/2004/07/Vector.VTT.Configuration">
+  <FileFormatVersion xmlns="http://schemas.datacontract.org/2004/07/Vector.Reusable.ModelFramework">3</FileFormatVersion>
+  <Project z:Id="2">
+    <_p z:Ref="1" i:nil="true" xmlns="http://schemas.datacontract.org/2004/07/Vector.Reusable.ModelFramework" />
+    <CMakeRootPath z:Id="3">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="CMake" /&gt;</CMakeRootPath>
+    <EcuInstanceSet z:Id="4">
+      <Content z:Id="5" z:Size="1">
+        <EcuInstance z:Id="6">
+          <A2lFilePath z:Id="7"></A2lFilePath>
+          <AdditionalCompileFlags xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="8" z:Size="0" />
+          <AdditionalCompileFlagsDebug xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="9" z:Size="0" />
+          <AdditionalCompileFlagsRelease xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="10" z:Size="0" />
+          <AdditionalLinkFlags xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="11" z:Size="0" />
+          <AdditionalLinkFlagsDebug xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="12" z:Size="0" />
+          <AdditionalLinkFlagsRelease xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="13" z:Size="0" />
+          <ApplicationLibaries z:Id="14" z:Size="0" />
+          <ApplicationLibariesBuildConfiguration z:Id="15" z:Size="0" />
+          <AutoSyncSourceFiles>false</AutoSyncSourceFiles>
+          <BasicTimingParameters z:Id="16">
+            <IsrPreAndPostExecTimeNs>1000</IsrPreAndPostExecTimeNs>
+            <TaskInitAndSwitchTimeNs>1000</TaskInitAndSwitchTimeNs>
+            <TickGranularityNs>1000</TickGranularityNs>
+          </BasicTimingParameters>
+          <BuildEvents z:Id="17" z:Size="0" />
+          <CpuSpeedFactor>1</CpuSpeedFactor>
+          <DiagnosticVariant i:nil="true" />
+          <EcuFolder z:Id="18"></EcuFolder>
+          <EcuGenerationParameters z:Id="19">
+            <GenerateBsw>true</GenerateBsw>
+            <GenerateEcuc>true</GenerateEcuc>
+            <GenerateRte>true</GenerateRte>
+          </EcuGenerationParameters>
+          <EcuSpecificPcTargetSettings i:nil="true" />
+          <EmptySourceFolders z:Id="20" z:Size="0" />
+          <FileMetadataHeader z:Id="21"></FileMetadataHeader>
+          <GenerateSwcStubs>true</GenerateSwcStubs>
+          <IsConsideredForTest>true</IsConsideredForTest>
+          <IsDummyEcu>false</IsDummyEcu>
+          <IsUserDefined>false</IsUserDefined>
+          <Name z:Id="22">BFC</Name>
+          <PowerSupplyInitValue>1</PowerSupplyInitValue>
+          <ProjectGuid z:Id="23">85982F68-DE6E-45BF-A379-39596671FF5D</ProjectGuid>
+          <SourceFiles z:Id="24" z:Size="6">
+            <BasedFileName z:Id="25">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="..\..\Appl\Source\BSW_Handler.c" /&gt;</BasedFileName>
+            <BasedFileName z:Id="26">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="..\..\Appl\Source\IoHwAb.c" /&gt;</BasedFileName>
+            <BasedFileName z:Id="27">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="..\..\Appl\Source\Os_Callout_Stubs.c" /&gt;</BasedFileName>
+            <BasedFileName z:Id="28">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="..\..\Appl\Source\Vtt_stubs.c" /&gt;</BasedFileName>
+            <BasedFileName z:Id="29">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="..\..\Appl\Source\BrsMainVTT.c" /&gt;</BasedFileName>
+            <BasedFileName z:Id="30">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="..\..\Appl\Source\LightCtrl.c" /&gt;</BasedFileName>
+          </SourceFiles>
+          <SourceFolders z:Id="31" z:Size="6">
+            <PersistentString z:Id="32">SWC</PersistentString>
+            <PersistentString z:Id="33">SWC</PersistentString>
+            <PersistentString z:Id="34">SWC</PersistentString>
+            <PersistentString z:Id="35">SWC</PersistentString>
+            <PersistentString z:Id="36">SWC</PersistentString>
+            <PersistentString z:Id="37">SWC</PersistentString>
+          </SourceFolders>
+          <TaskMappingData z:Id="38" />
+          <TaskSet z:Id="39">
+            <Content z:Id="40" z:Size="6">
+              <Task z:Id="41">
+                <ComputationTime>100</ComputationTime>
+                <Name z:Id="42">IoTask</Name>
+              </Task>
+              <Task z:Id="43">
+                <ComputationTime>100</ComputationTime>
+                <Name z:Id="44">BswTask</Name>
+              </Task>
+              <Task z:Id="45">
+                <ComputationTime>100</ComputationTime>
+                <Name z:Id="46">SwcTask</Name>
+              </Task>
+              <Task z:Id="47">
+                <ComputationTime>100</ComputationTime>
+                <Name z:Id="48">IdleTask_OsCore</Name>
+              </Task>
+              <Task z:Id="49">
+                <ComputationTime>100</ComputationTime>
+                <Name z:Id="50">Default_Init_Task</Name>
+              </Task>
+              <Task z:Id="51">
+                <ComputationTime>100</ComputationTime>
+                <Name z:Id="52">Default_Init_Task_Trusted</Name>
+              </Task>
+            </Content>
+          </TaskSet>
+          <UserDefinedIncludeFolders z:Id="53" z:Size="3">
+            <BasedFileName z:Id="54">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="..\..\Appl\GenDataVtt" /&gt;</BasedFileName>
+            <BasedFileName z:Id="55">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="..\..\Appl\GenData" /&gt;</BasedFileName>
+            <BasedFileName z:Id="56">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="..\..\Appl\IncludeVtt" /&gt;</BasedFileName>
+          </UserDefinedIncludeFolders>
+          <UserDefinedIncludeFoldersBuildConfiguration z:Id="57" z:Size="3">
+            <BuildConfigurations>All</BuildConfigurations>
+            <BuildConfigurations>All</BuildConfigurations>
+            <BuildConfigurations>All</BuildConfigurations>
+          </UserDefinedIncludeFoldersBuildConfiguration>
+          <UserPreprocessorDefinitions xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="58" z:Size="0" />
+          <UserPreprocessorDefinitionsDebug xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="59" z:Size="2">
+            <d6p1:string z:Id="60">VTT_ENABLE_CUSTOMVARS</d6p1:string>
+            <d6p1:string z:Id="61">LEVEL3_vECU</d6p1:string>
+          </UserPreprocessorDefinitionsDebug>
+          <UserPreprocessorDefinitionsRelease xmlns:d6p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" z:Id="62" z:Size="2">
+            <d6p1:string z:Id="63">VTT_ENABLE_CUSTOMVARS</d6p1:string>
+            <d6p1:string z:Id="64">LEVEL3_vECU</d6p1:string>
+          </UserPreprocessorDefinitionsRelease>
+        </EcuInstance>
+      </Content>
+    </EcuInstanceSet>
+    <ExecutionEnvironmentSettings z:Id="65">
+      <CommunicationDefinition>ClassicComStyle</CommunicationDefinition>
+      <EnableStandaloneSut>false</EnableStandaloneSut>
+    </ExecutionEnvironmentSettings>
+    <ExtraDllSet z:Id="66">
+      <Content z:Id="67" z:Size="0" />
+    </ExtraDllSet>
+    <GeneralPcTargetSettings z:Id="68">
+      <AutoCompiler>true</AutoCompiler>
+      <BuildConfiguration>Release</BuildConfiguration>
+      <BuildSolution>true</BuildSolution>
+      <CanoeConfigPath z:Id="69"></CanoeConfigPath>
+      <CanoeEmuPathOption>0</CanoeEmuPathOption>
+      <CompilerId>VS2017</CompilerId>
+      <CompilerVersion z:Id="70">MINGW</CompilerVersion>
+      <CopyBswFiles>false</CopyBswFiles>
+      <CreateDebugVersion>false</CreateDebugVersion>
+      <GenerateCsvFile>true</GenerateCsvFile>
+      <GenerateSolution>true</GenerateSolution>
+      <LibraryType z:Id="71">Shared</LibraryType>
+      <Platform z:Id="72">Windows-x64</Platform>
+      <ValidateSourceFiles>true</ValidateSourceFiles>
+      <VerboseLevel>1</VerboseLevel>
+    </GeneralPcTargetSettings>
+    <IdeSolutionFile z:Id="73">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="Solution\LightControl.sln" /&gt;</IdeSolutionFile>
+    <NetworkSet z:Id="74">
+      <Content z:Id="75" z:Size="0" />
+    </NetworkSet>
+    <OutputFolder z:Id="76">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="." /&gt;</OutputFolder>
+    <RemoteSystemSet z:Id="77">
+      <Content z:Id="78" z:Size="0" />
+    </RemoteSystemSet>
+    <SimulationSetups z:Id="79">
+      <Content z:Id="80" z:Size="1">
+        <SimulationSetup z:Id="81">
+          <CanoeConfigPath z:Ref="69" i:nil="true" />
+          <DataObjectsNamespace z:Id="82">$(PROJECTNAME)DO</DataObjectsNamespace>
+          <DataTypesNamespace z:Id="83">$(PROJECTNAME)DT</DataTypesNamespace>
+          <ExtraDllSet z:Ref="66" i:nil="true" />
+          <Name z:Id="84">Setup</Name>
+          <NetworkSet z:Ref="74" i:nil="true" />
+          <ParticipantsNamespace z:Id="85">$(PROJECTNAME)P</ParticipantsNamespace>
+          <SimulationInstanceSet z:Id="86">
+            <Content z:Id="87" z:Size="0" />
+          </SimulationInstanceSet>
+          <SutFolder z:Id="88">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name=".\SUT" /&gt;</SutFolder>
+        </SimulationSetup>
+      </Content>
+      <AutoDeriveSimulationSetup>False</AutoDeriveSimulationSetup>
+    </SimulationSetups>
+    <SipData z:Id="89">
+      <CBD z:Id="90">CBD0000000</CBD>
+      <DeliveryNumber>0</DeliveryNumber>
+      <Path z:Id="91">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="..\..\..\..\..\..\DaVinciPackageManager\Packages\DualTarget" /&gt;</Path>
+      <SipVersion z:Id="92">32.7.4</SipVersion>
+      <VttGeneratorVersion z:Id="93"></VttGeneratorVersion>
+    </SipData>
+    <SolutionGuid z:Id="94">9B391FDB-5417-43CA-8AAB-31A81BDB9DCB</SolutionGuid>
+    <SutFolder z:Id="95">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name=".\SUT" /&gt;</SutFolder>
+    <SwcInstanceSet z:Id="96">
+      <Content z:Id="97" z:Size="3">
+        <SwcInstance z:Id="98">
+          <AsrPathToRootComponentType z:Id="99">/ECUCompositionTypes/ECU_Composition</AsrPathToRootComponentType>
+          <ContainingFileGroups z:Id="100" z:Size="1">
+            <FileGroup z:Id="101">
+              <Name z:Id="102">BFC</Name>
+              <NameIsEducatedGuess>false</NameIsEducatedGuess>
+              <SystemDescriptionFiles z:Id="103" z:Size="1">
+                <BasedFileName z:Id="104">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="..\..\LightControl.dpa" /&gt;</BasedFileName>
+              </SystemDescriptionFiles>
+            </FileGroup>
+          </ContainingFileGroups>
+          <DefiningExtract z:Id="105"></DefiningExtract>
+          <DefiningExtracts z:Id="106" z:Size="0" />
+          <Name z:Id="107">BSW_Handler</Name>
+          <UserDefinedEcuInstance i:nil="true" />
+        </SwcInstance>
+        <SwcInstance z:Id="108">
+          <AsrPathToRootComponentType z:Id="109">/ECUCompositionTypes/ECU_Composition</AsrPathToRootComponentType>
+          <ContainingFileGroups z:Id="110" z:Size="1">
+            <FileGroup z:Ref="101" i:nil="true" />
+          </ContainingFileGroups>
+          <DefiningExtract z:Id="111"></DefiningExtract>
+          <DefiningExtracts z:Id="112" z:Size="0" />
+          <Name z:Id="113">IoHwAb</Name>
+          <UserDefinedEcuInstance i:nil="true" />
+        </SwcInstance>
+        <SwcInstance z:Id="114">
+          <AsrPathToRootComponentType z:Id="115">/ECUCompositionTypes/ECU_Composition</AsrPathToRootComponentType>
+          <ContainingFileGroups z:Id="116" z:Size="1">
+            <FileGroup z:Ref="101" i:nil="true" />
+          </ContainingFileGroups>
+          <DefiningExtract z:Id="117"></DefiningExtract>
+          <DefiningExtracts z:Id="118" z:Size="0" />
+          <Name z:Id="119">LightCtrl</Name>
+          <UserDefinedEcuInstance i:nil="true" />
+        </SwcInstance>
+      </Content>
+    </SwcInstanceSet>
+    <SystemDescriptionFileGroups z:Id="120" z:Size="1">
+      <FileGroup z:Ref="101" i:nil="true" />
+    </SystemDescriptionFileGroups>
+    <SystemDescriptionFiles z:Id="121" z:Size="1">
+      <BasedFileName z:Id="122">&lt;VFileName v="V5" f="BQL" init="1" base="cfg" name="..\..\LightControl.dpa" /&gt;</BasedFileName>
+    </SystemDescriptionFiles>
+    <VttVersionSavedWith z:Id="123">8.3.75</VttVersionSavedWith>
+  </Project>
+</ProjectModel>

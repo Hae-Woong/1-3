@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="9c4795a4-e4da-4313-a92b-e679511c1474">
+          <SHORT-NAME>Fls_ib_bswmd</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="a73e4da0-4808-4717-a5f6-c13ad79ce233">
+              <SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
+              <ELEMENTS>
+                <BSW-MODULE-DESCRIPTION UUID="f624e4e7-cdf5-4f18-83e7-d056ef806d0c">
+                  <SHORT-NAME>Fls</SHORT-NAME>
+                  <PROVIDED-ENTRYS>
+                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                      <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Fls_ib_bswmd/BswModuleDescriptions/Fls_MainFunction</BSW-MODULE-ENTRY-REF>
+                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                      <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Fls_ib_bswmd/BswModuleDescriptions/Fls_30_Stub_MainFunction</BSW-MODULE-ENTRY-REF>
+                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  </PROVIDED-ENTRYS>
+                  <INTERNAL-BEHAVIORS>
+                    <BSW-INTERNAL-BEHAVIOR UUID="d267a900-12b8-4f52-bc25-ae73c8447499">
+                      <SHORT-NAME>FlsBehavior</SHORT-NAME>
+                      <ENTITYS>
+                        <BSW-SCHEDULABLE-ENTITY UUID="9bfc95e2-c6e9-41fd-aefd-aea8ed449353">
+                          <SHORT-NAME>Fls_MainFunction</SHORT-NAME>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Fls_ib_bswmd/BswModuleDescriptions/Fls_MainFunction</IMPLEMENTED-ENTRY-REF>
+                        </BSW-SCHEDULABLE-ENTITY>
+                      </ENTITYS>
+                      <EVENTS>
+                        <BSW-TIMING-EVENT UUID="6aa9d5a9-e9c6-414b-bf06-38a3d8f05c6a">
+                          <SHORT-NAME>Fls_MainFunctionTimingEvent0</SHORT-NAME>
+                          <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/MICROSAR/Fls_ib_bswmd/BswModuleDescriptions/Fls/FlsBehavior/Fls_MainFunction</STARTS-ON-EVENT-REF>
+                          <PERIOD>0.01</PERIOD>
+                        </BSW-TIMING-EVENT>
+                      </EVENTS>
+                    </BSW-INTERNAL-BEHAVIOR>
+                  </INTERNAL-BEHAVIORS>
+                </BSW-MODULE-DESCRIPTION>
+                <BSW-MODULE-ENTRY UUID="670cde87-2c39-40c1-afa4-52ac59200346">
+                  <SHORT-NAME>Fls_MainFunction</SHORT-NAME>
+                  <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="33022ff3-f082-4548-ab3c-90793765f2d3">
+      <SHORT-NAME>AURIX2G</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="7e118c10-0a18-49f2-9978-33759fe5e7c2">
+          <SHORT-NAME>EcucDefs</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="edc7905b-0331-4859-81ab-50c04d23c3cd">
+              <SHORT-NAME>Fls_ib_bswmd</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="c3da0faa-2674-4831-a994-9313d8c5244b">
+                  <SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
+                  <ELEMENTS>
+                    <BSW-MODULE-DESCRIPTION UUID="6e3d11e1-6bea-452c-b638-63cb034d5dee">
+                      <SHORT-NAME>Fls</SHORT-NAME>
+                      <PROVIDED-ENTRYS>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                          <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AURIX2G/EcucDefs/Fls_ib_bswmd/BswModuleDescriptions/Fls_17_Dmu_MainFunction</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                      </PROVIDED-ENTRYS>
+                      <INTERNAL-BEHAVIORS>
+                        <BSW-INTERNAL-BEHAVIOR UUID="c74e4ff4-d6e3-4ab8-bbbe-5e008db3c0f2">
+                          <SHORT-NAME>FlsBehavior</SHORT-NAME>
+                          <EXCLUSIVE-AREAS>
+                            <EXCLUSIVE-AREA UUID="9e833ca3-377b-4cbc-8442-ed0ebcdf978c">
+                              <SHORT-NAME>Init</SHORT-NAME>
+                            </EXCLUSIVE-AREA>
+                            <EXCLUSIVE-AREA UUID="d35ab293-780d-49f4-8476-5a4e7896a19b">
+                              <SHORT-NAME>Erase</SHORT-NAME>
+                            </EXCLUSIVE-AREA>
+                            <EXCLUSIVE-AREA UUID="9f803859-f83b-49df-9e85-88d794fdc728">
+                              <SHORT-NAME>Write</SHORT-NAME>
+                            </EXCLUSIVE-AREA>
+                            <EXCLUSIVE-AREA UUID="0064a669-337d-4594-bcbc-be4839911539">
+                              <SHORT-NAME>Main</SHORT-NAME>
+                            </EXCLUSIVE-AREA>
+                            <EXCLUSIVE-AREA UUID="e2214ca0-d434-4d9e-bbd4-f773ab99b0cb">
+                              <SHORT-NAME>ResumeErase</SHORT-NAME>
+                            </EXCLUSIVE-AREA>
+                            <EXCLUSIVE-AREA UUID="d4c00a49-6db7-4d27-b260-ddee58f5cf4c">
+                              <SHORT-NAME>UserContentCount</SHORT-NAME>
+                            </EXCLUSIVE-AREA>
+                          </EXCLUSIVE-AREAS>
+                          <ENTITYS>
+                            <BSW-SCHEDULABLE-ENTITY UUID="0200407d-43f7-4149-af5b-a8c91e5b1f6c">
+                              <SHORT-NAME>Fls_17_Dmu_MainFunction</SHORT-NAME>
+                              <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AURIX2G/EcucDefs/Fls_ib_bswmd/BswModuleDescriptions/Fls/FlsBehavior/Init</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AURIX2G/EcucDefs/Fls_ib_bswmd/BswModuleDescriptions/Fls/FlsBehavior/Erase</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AURIX2G/EcucDefs/Fls_ib_bswmd/BswModuleDescriptions/Fls/FlsBehavior/Write</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AURIX2G/EcucDefs/Fls_ib_bswmd/BswModuleDescriptions/Fls/FlsBehavior/Main</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AURIX2G/EcucDefs/Fls_ib_bswmd/BswModuleDescriptions/Fls/FlsBehavior/ResumeErase</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AURIX2G/EcucDefs/Fls_ib_bswmd/BswModuleDescriptions/Fls/FlsBehavior/UserContentCount</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                              </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AURIX2G/EcucDefs/Fls_ib_bswmd/BswModuleDescriptions/Fls_17_Dmu_MainFunction</IMPLEMENTED-ENTRY-REF>
+                            </BSW-SCHEDULABLE-ENTITY>
+                          </ENTITYS>
+                          <EVENTS>
+                            <BSW-TIMING-EVENT UUID="937d834d-a5c9-4db4-a51a-e230a192ae77">
+                              <SHORT-NAME>Fls_17_Dmu_MainFunctionTimingEvent0</SHORT-NAME>
+                              <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/AURIX2G/EcucDefs/Fls_ib_bswmd/BswModuleDescriptions/Fls/FlsBehavior/Fls_17_Dmu_MainFunction</STARTS-ON-EVENT-REF>
+                              <PERIOD>0.01</PERIOD>
+                            </BSW-TIMING-EVENT>
+                          </EVENTS>
+                        </BSW-INTERNAL-BEHAVIOR>
+                      </INTERNAL-BEHAVIORS>
+                    </BSW-MODULE-DESCRIPTION>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

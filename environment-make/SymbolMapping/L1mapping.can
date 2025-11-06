@@ -1,0 +1,16 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+
+}
+
+variables
+{
+
+}
+
+on transmit_value ApplicationObjects::Mapping.LightIntensity {
+  Write("monitored LightIntensity: %f", $this);
+
+  @sysvar::VTT::BFC::IoHwAb::LightIntensity = 10.23 * $this;
+}

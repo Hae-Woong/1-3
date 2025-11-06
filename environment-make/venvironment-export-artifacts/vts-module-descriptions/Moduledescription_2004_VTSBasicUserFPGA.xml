@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules version="1" >
+<module interface="0007" dpramStartAddress="1000" productCode="0007D401" dpramLength="1048" name="VT2004A_Demo_Simulink" VDID="EADA9971BACFA8F9CF4EC6D4CB5E323E00000000" >
+<values>
+<block start="44" len="1C" type="read" sync="yes">
+<v id="00000100" b="44" />
+<v id="00000200" b="45" />
+<v id="00000300" b="46" />
+<v id="00000400" b="47" />
+<v id="00000500" b="48" />
+<v id="00000600" b="4A" />
+<v id="00000700" b="4C" />
+<v id="00000800" b="4E" />
+<v id="00000900" b="50" />
+<v id="00000A00" b="54" />
+<v id="00000B00" b="58" />
+<v id="00000C00" b="5C" />
+</block>
+<block start="98" len="1C" type="write" sync="yes">
+<v id="80000500" b="98" l="20" d="10270000" />
+<v id="80000600" b="9C" l="20" d="10270000" />
+<v id="80000700" b="A0" l="20" d="10270000" />
+<v id="80000800" b="A4" l="20" d="10270000" />
+<v id="80000900" b="A8" l="10" />
+<v id="80000A00" b="AA" l="10" />
+<v id="80000B00" b="AC" l="10" />
+<v id="80000C00" b="AE" l="10" />
+<v id="80000D00" b="B0" l="10" />
+</block>
+<block start="EC" len="D0" type="write" sync="yes">
+<v id="80000E00" b="EC:0" l="1" />
+<v id="80000F00" b="EC:1" l="1" />
+<v id="80001000" b="EC:4" l="1" />
+<v id="80001100" b="EC:5" l="1" />
+<v id="80001200" b="EC:2" l="1" />
+<v id="80001300" b="EC:3" l="1" />
+<v id="80001400" b="ED:0" l="1" />
+<v id="80001500" b="ED:1" l="1" />
+<v id="80001600" b="ED:4" l="1" />
+<v id="80001700" b="ED:5" l="1" />
+<v id="80001800" b="ED:2" l="1" />
+<v id="80001900" b="ED:3" l="1" />
+<v id="80001A00" b="EE:0" l="1" />
+<v id="80001B00" b="EE:1" l="1" />
+<v id="80001C00" b="EE:4" l="1" />
+<v id="80001D00" b="EE:5" l="1" />
+<v id="80001E00" b="EE:2" l="1" />
+<v id="80001F00" b="EE:3" l="1" />
+<v id="80002000" b="EF:0" l="1" />
+<v id="80002100" b="EF:1" l="1" />
+<v id="80002200" b="EF:4" l="1" />
+<v id="80002300" b="EF:5" l="1" />
+<v id="80002400" b="EF:2" l="1" />
+<v id="80002500" b="EF:3" l="1" />
+<v id="80002600" b="F0:0" l="1" />
+<v id="80002700" b="F0:1" l="1" />
+<v id="80002800" b="F0:2" l="1" />
+<v id="80002900" b="F0:3" l="1" />
+<v id="80002A00" b="F4" l="8" />
+<v id="80002B00" b="F5" l="8" />
+<v id="80002C00" b="F6" l="8" />
+<v id="80002D00" b="F7" l="8" />
+<v id="80000100" b="F8" l="8" />
+<v id="80000200" b="F9" l="8" />
+<v id="80000300" b="FA" l="8" />
+<v id="80000400" b="FB" l="8" />
+<v id="80002E00" b="FC" l="20" d="10270000" />
+<v id="80002F00" b="100" l="20" d="10270000" />
+<v id="80003000" b="104" l="20" d="10270000" />
+<v id="80003100" b="108" l="20" d="10270000" />
+<v id="80003200" b="10C" l="10" d="8813" />
+<v id="80003300" b="10E" l="10" d="8813" />
+<v id="80003400" b="110" l="10" d="8813" />
+<v id="80003500" b="112" l="10" d="8813" />
+<v id="80003600" b="114" l="20" d="88130000" />
+<v id="80003700" b="118" l="20" d="88130000" />
+<v id="80003800" b="11C" l="20" d="88130000" />
+<v id="80003900" b="120" l="20" d="88130000" />
+<v id="80003A00" b="124" l="20" d="10270000" />
+<v id="80003B00" b="128" l="20" d="10270000" />
+<v id="80003C00" b="12C" l="20" d="10270000" />
+<v id="80003D00" b="130" l="20" d="10270000" />
+<v id="80003E00" b="134" l="10" />
+<v id="80003F00" b="136" l="10" />
+<v id="80004000" b="138" l="10" />
+<v id="80004100" b="13A" l="10" />
+<v id="80004200" b="13C" l="10" d="8813" />
+<v id="80004300" b="13E" l="10" d="8813" />
+<v id="80004400" b="140" l="10" d="8813" />
+<v id="80004500" b="142" l="10" d="8813" />
+<v id="80004600" b="144" l="10" />
+<v id="80004700" b="146" l="10" />
+<v id="80004800" b="148" l="10" />
+<v id="80004900" b="14A" l="10" />
+<v id="80004A00" b="14C" l="10" />
+<v id="80004B00" b="14E" l="10" />
+<v id="80004C00" b="150" l="10" />
+<v id="80004D00" b="152" l="10" />
+<v id="80004E00" b="154" l="10" d="E803" />
+<v id="80004F00" b="156" l="10" d="E803" />
+<v id="80005000" b="158" l="10" d="E803" />
+<v id="80005100" b="15A" l="10" d="E803" />
+<v id="80005200" b="15C" l="20" />
+<v id="80005300" b="160" l="20" />
+<v id="80005400" b="164" l="20" />
+<v id="80005500" b="168" l="20" />
+<v id="80006600" b="16C" l="20" d="40420F00" />
+<v id="80006700" b="170" l="20" d="40420F00" />
+<v id="80006800" b="174" l="20" d="40420F00" />
+<v id="80006900" b="178" l="20" d="40420F00" />
+<v id="80006A00" b="17C" l="10" />
+<v id="80006B00" b="17E" l="10" />
+<v id="80006C00" b="180" l="10" />
+<v id="80006D00" b="182" l="10" />
+<v id="80006E00" b="184" l="20" />
+<v id="80006F00" b="188" l="20" />
+<v id="80007000" b="18C" l="20" />
+<v id="80007100" b="190" l="20" />
+<v id="80007200" b="194" l="20" d="00000100" />
+<v id="80007300" b="198" l="20" d="00000100" />
+<v id="80007400" b="19C" l="20" d="00000100" />
+<v id="80007500" b="1A0" l="20" d="00000100" />
+<v id="80007600" b="1A4" l="10" />
+<v id="80007700" b="1A6" l="10" />
+<v id="80007800" b="1A8" l="10" />
+<v id="80007900" b="1AA" l="10" />
+<v id="80007A00" b="1AC" l="10" />
+<v id="80007B00" b="1AE" l="10" />
+<v id="80007C00" b="1B0" l="10" />
+<v id="80007D00" b="1B2" l="10" />
+<v id="80007E00" b="1B4" l="10" d="7869" />
+<v id="80007F00" b="1B6" l="10" d="7869" />
+<v id="80008000" b="1B8" l="10" d="7869" />
+<v id="80008100" b="1BA" l="10" d="7869" />
+</block>
+<freeValues>
+<v id="40000500" b="30" />
+<v id="40000100" b="34" />
+<v id="40000200" b="38" />
+<v id="40000300" b="3C" />
+<v id="40000400" b="40" />
+</freeValues>
+</values>
+<customValues>
+<readBlock len="0010" start="1000" sync="true" >
+<readValue id="02000200" b="1000" >
+<dataType>
+<timestamp>
+</timestamp>
+</dataType>
+</readValue>
+<readValue id="02000000" b="1008" name="var_Toggle_Bit" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000100" b="100C" name="var_Counter_Value" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+</readBlock>
+<writeBlock len="0008" start="1030" sync="true" >
+<writeValue id="82000000" b="1030" name="var_Counter_Enable" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000100" b="1030:01" name="var_LED_1" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000200" b="1031" name="var_Toggle_Bit_Select" d="17" >
+<dataType>
+<integer bitLength="0008" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>10.000000000000</min><max>31.000000000000</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000300" b="1034" name="var_Output_Voltage" channelNo="0001" d="80969800" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>0.000001000000</scale></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+</writeBlock>
+</customValues>
+</module></modules>

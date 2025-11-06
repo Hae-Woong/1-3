@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules version="1">
+	<module productCode="001F4600" interface="0" dpramLength="1000" dpramStartAddress="0F00">
+		<values>
+			<block start="100" len="4" type="read" sync="yes">
+				<v id="00000100" b="100" />
+				<v id="00000200" b="102:0" />
+				<v id="00000300" b="102:1" />
+				<v id="00000400" b="102:2" />
+				<v id="00000500" b="102:3" />
+				<v id="00000600" b="102:4" />
+				<v id="00000700" b="102:5" />
+			</block>
+			<block start="0" len="4" type="write" sync="yes">
+				<v id="80000100" b="0" l="20" d="00070000" />
+				<v id="80000200" b="0:0" l="1" />
+				<v id="80000300" b="0:1" l="1" />
+				<v id="80000400" b="0:2" l="1" />
+				<v id="80000500" b="0:3" l="1" />
+				<v id="80000600" b="0:4" l="1" />
+				<v id="80000700" b="0:5" l="1" />
+				<v id="80000800" b="0:6" l="1" />
+				<v id="80000900" b="0:7" l="1" />
+				<v id="80000A00" b="1:0" l="1" d="01" />
+				<v id="80000B00" b="1:1" l="1" d="01" />
+				<v id="80000C00" b="1:2" l="1" d="01" />
+			</block>
+		</values>
+	</module>
+</modules>

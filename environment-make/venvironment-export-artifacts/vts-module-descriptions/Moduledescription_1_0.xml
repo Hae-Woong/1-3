@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules version="1">
+<module productCode="00000100" interface="2" dpramLength="2000" dpramStartAddress="1030" VDID="0100000000000000000000000000000000000000" name="Interface Version 2">
+<values>
+</values>
+<customValues>
+  <writeBlock len="0020" start="0" sync="true" >
+    <writeValue id="02010100" b="0" name="OperationMode" channelNo="1" >
+      <dataType>
+        <integer bitLength="10" unsigned="true" floatInput="false">
+          <standardScaling>
+            <min>0</min>
+            <max>15</max>
+          </standardScaling>
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>
+    <writeValue id="02010200" b="2" name="SettingsMode" channelNo="1" >
+      <dataType>
+        <integer bitLength="2" unsigned="true" floatInput="false">
+          <standardScaling>
+            <min>0</min>
+            <max>2</max>
+          </standardScaling>        
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>        
+    <writeValue id="02010300" b="2:2" name="SensingMode" channelNo="1" >
+      <dataType>
+        <integer bitLength="4" unsigned="true" floatInput="false">
+          <standardScaling>
+            <min>0</min>
+            <max>2</max>
+          </standardScaling>        
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>    
+    <writeValue id="02010400" b="2:6" name="CurrentSensorSelect" channelNo="1" >
+      <dataType>
+        <integer bitLength="2" unsigned="true" floatInput="false">
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>    
+    <writeValue id="80000100" b="3" channelNo="1" >
+      <dataType>
+        <integer bitLength="08" unsigned="true" floatInput="false">
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>    
+    <writeValue id="02010600" b="4" name="VoltageSetting" channelNo="1" >
+      <dataType>
+        <integer bitLength="10" unsigned="true" floatInput="true">
+          <scaling>
+            <standardScaling>
+              <scale>0.00025</scale>
+              <offset>0.8</offset>
+              <max>8.1</max>
+            </standardScaling>
+          </scaling>        
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>    
+    <writeValue id="02010700" b="6" name="LoadSetting" channelNo="1" >
+      <dataType>
+        <integer bitLength="10" unsigned="true" floatInput="true">
+          <scaling>
+            <standardScaling>
+              <scale>0.001</scale>
+              <max>15</max>
+            </standardScaling>
+          </scaling>        
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>
+    <writeValue id="02010900" b="10" name="OperationMode" channelNo="2" >
+      <dataType>
+        <integer bitLength="10" unsigned="true" floatInput="false">        
+          <standardScaling>
+            <scale>1</scale>
+            <offset>0</offset>
+            <min>0</min>
+            <max>15</max>
+          </standardScaling>        
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>
+    <writeValue id="02010A00" b="12" name="SettingsMode" channelNo="2" >
+      <dataType>
+        <integer bitLength="2" unsigned="true" floatInput="false">
+          <standardScaling>
+            <min>0</min>
+            <max>2</max>
+          </standardScaling>        
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>        
+    <writeValue id="02010B00" b="12:2" name="SensingMode" channelNo="2" >
+      <dataType>
+        <integer bitLength="4" unsigned="true" floatInput="false">
+          <standardScaling>
+            <min>0</min>
+            <max>2</max>
+          </standardScaling>        
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>    
+    <writeValue id="02010C00" b="12:6" name="CurrentSensorSelect" channelNo="2" >
+      <dataType>
+        <integer bitLength="2" unsigned="true" floatInput="false">
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>    
+    <writeValue id="80000200" b="13" channelNo="2" >
+      <dataType>
+        <integer bitLength="08" unsigned="true" floatInput="false">
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>    
+    <writeValue id="02010D00" b="14" name="VoltageSetting" channelNo="2" >
+      <dataType>
+        <integer bitLength="10" unsigned="true" floatInput="true">
+          <scaling>
+            <standardScaling>
+              <scale>0.00025</scale>
+              <offset>0.8</offset>
+              <max>8.1</max>              
+            </standardScaling>
+          </scaling>        
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>    
+    <writeValue id="02010E00" b="16" name="LoadSetting" channelNo="2" >
+      <dataType>
+        <integer bitLength="10" unsigned="true" floatInput="true">
+          <scaling>
+            <standardScaling>
+              <scale>0.001</scale>
+              <max>15</max>              
+            </standardScaling>
+          </scaling>        
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </writeValue>
+  </writeBlock>
+  <readBlock len="0020" start="150" sync="true" >
+    <readValue id="02000200" b="150" name="SenseVoltage" channelNo="1" >
+      <dataType>
+        <integer bitLength="10" unsigned="true" floatOutput="true">
+          <scaling>
+            <standardScaling>
+              <scale>0.00025</scale>
+              <max>10</max>
+            </standardScaling>
+          </scaling>
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </readValue>
+    <readValue id="02000300" b="152" name="VoltageCtrlValue" channelNo="1" >    
+      <dataType>
+        <integer bitLength="10" unsigned="true" floatOutput="true">
+          <scaling>
+            <standardScaling>
+              <scale>0.001</scale>
+              <max>10</max>              
+            </standardScaling>
+          </scaling>
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </readValue>    
+    <readValue id="02000400" b="154" name="Temperature" channelNo="1" >
+      <dataType>
+        <integer bitLength="08" unsigned="true" floatOutput="false">
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </readValue>    
+    <readValue id="02000500" b="155" name="CurrentMeasure" channelNo="1" >    
+      <dataType>
+        <integer bitLength="20" unsigned="false" floatOutput="true">
+          <scaling>
+            <standardScaling>
+              <scale>0.000001</scale>
+              <min>-60</min>
+              <max>60</max>
+            </standardScaling>
+          </scaling>
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </readValue>
+    <readValue id="02000600" b="159" name="CoulombMeasure" channelNo="1" >    
+      <dataType>
+        <integer bitLength="20" unsigned="false" floatOutput="true">
+          <scaling>
+            <standardScaling>
+              <scale>0.0001</scale>
+            </standardScaling>
+          </scaling>
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </readValue>    
+    <readValue id="02000700" b="15D" name="IsNewCurrentValue" channelNo="1" >    
+      <dataType>
+        <integer bitLength="1" unsigned="true" floatOutput="false">
+        </integer>
+      </dataType>
+    </readValue>
+    <readValue id="02000900" b="15D:2" name="ErrorFuse" channelNo="1" >    
+      <dataType>
+        <integer bitLength="1" unsigned="true" floatOutput="false">
+        </integer>
+        <timestamp>
+        </timestamp>        
+      </dataType>
+    </readValue>    
+    <readValue id="02000A00" b="15D:3" name="ErrorLoadReduction" channelNo="1" >    
+      <dataType>
+        <integer bitLength="1" unsigned="true" floatOutput="false">
+        </integer>
+        <timestamp>
+        </timestamp>        
+      </dataType>
+    </readValue>     
+    <readValue id="02000B00" b="15D:4" name="ErrorSense" channelNo="1" >    
+      <dataType>
+        <integer bitLength="1" unsigned="true" floatOutput="false">
+        </integer>
+        <timestamp>
+        </timestamp>        
+      </dataType>
+    </readValue>
+    <readValue id="02000800" b="15E" name="IsNewCoulombValue" channelNo="1" >    
+      <dataType>
+        <integer bitLength="08" unsigned="true" floatOutput="false">
+        </integer>
+        <timestamp>
+        </timestamp>        
+      </dataType>
+    </readValue>
+    <readValue id="02000C00" b="160" name="SenseVoltage" channelNo="2" >
+      <dataType>
+        <integer bitLength="10" unsigned="true" floatOutput="true">
+          <scaling>
+            <standardScaling>
+              <scale>0.00025</scale>
+              <max>10</max>              
+            </standardScaling>
+          </scaling>
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </readValue>
+    <readValue id="02000D00" b="162" name="VoltageCtrlValue" channelNo="2" >    
+      <dataType>
+        <integer bitLength="10" unsigned="true" floatOutput="true">
+          <scaling>
+            <standardScaling>
+              <scale>0.001</scale>
+              <max>10</max>              
+            </standardScaling>
+          </scaling>
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </readValue>    
+    <readValue id="02000E00" b="164" name="Temperature" channelNo="2" >
+      <dataType>
+        <integer bitLength="08" unsigned="true" floatOutput="false">
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </readValue>    
+    <readValue id="02000F00" b="165" name="CurrentMeasure" channelNo="2" >    
+      <dataType>
+        <integer bitLength="20" unsigned="false" floatOutput="true">
+          <scaling>
+            <standardScaling>
+              <scale>0.000001</scale>
+              <min>-60</min>
+              <max>60</max>              
+            </standardScaling>
+          </scaling>
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </readValue>
+    <readValue id="02001000" b="169" name="CoulombMeasure" channelNo="2" >    
+      <dataType>
+        <integer bitLength="20" unsigned="false" floatOutput="true">
+          <scaling>
+            <standardScaling>
+              <scale>0.0001</scale>
+            </standardScaling>
+          </scaling>
+        </integer>
+        <timestamp>
+        </timestamp>
+      </dataType>
+    </readValue>    
+    <readValue id="02001100" b="16D" name="IsNewCurrentValue" channelNo="2" >    
+      <dataType>
+        <integer bitLength="1" unsigned="true" floatOutput="false">
+        </integer>
+        <timestamp>
+        </timestamp>        
+      </dataType>
+    </readValue>       
+    <readValue id="02001300" b="16D:2" name="ErrorFuse" channelNo="2" >    
+      <dataType>
+        <integer bitLength="1" unsigned="true" floatOutput="false">
+        </integer>
+        <timestamp>
+        </timestamp>        
+      </dataType>
+    </readValue>    
+    <readValue id="02001400" b="16D:3" name="ErrorLoadReduction" channelNo="2" >    
+      <dataType>
+        <integer bitLength="1" unsigned="true" floatOutput="false">
+        </integer>
+        <timestamp>
+        </timestamp>        
+      </dataType>
+    </readValue>     
+    <readValue id="02001500" b="16D:4" name="ErrorSense" channelNo="2" >    
+      <dataType>
+        <integer bitLength="1" unsigned="true" floatOutput="false">
+        </integer>
+        <timestamp>
+        </timestamp>        
+      </dataType>
+    </readValue>
+    <readValue id="02001200" b="16E" name="IsNewCoulombValue" channelNo="2">        
+      <dataType>
+        <integer bitLength="08" unsigned="true" floatOutput="false">
+        </integer>
+        <timestamp>
+        </timestamp>        
+      </dataType>
+    </readValue>              
+  </readBlock>
+</customValues>
+</module>
+</modules>

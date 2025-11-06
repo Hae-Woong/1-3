@@ -1,0 +1,60 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Lightcontrol Level 1 ECU",
+            "type": "shell",
+            "command": "${env:vVIRTUALtarget_InstallDir}\\VttMake",
+            "args": [
+                "make",
+                "./ECU/LightControl-level1.vttmake"
+            ],
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "Build Lightcontrol Level 3 ECU",
+            "type": "shell",
+            "command": "${env:vVIRTUALtarget_InstallDir}\\VttMake",
+            "args": [
+                "make",
+                "./ECU/LightControl-level3.vttmake"
+            ],
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "Download Microsar.SIP",
+            "type": "shell",
+            "command": ".github\\scripts\\get-repo.ps1",
+            "args": [
+                "-configFile",
+                "microsar-sip-svn-config.json"
+            ],
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "type": "venvironment",
+            "label": "Vector Simulation and Test Environment: Build environment",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "args": ["--arch", "Win32", "-j", "4"],
+            "problemMatcher": []
+        },
+        {
+            "type": "vtestunit",
+            "label": "Vector Test Unit: Build test unit",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "args": ["--verbosity-level=3"]
+        }
+    ]
+}

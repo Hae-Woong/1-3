@@ -1,0 +1,920 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00052.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>AUTOSAR_Platform</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>BaseTypes</SHORT-NAME>
+          <ELEMENTS>
+            <SW-BASE-TYPE>
+              <SHORT-NAME>uint8</SHORT-NAME>
+              <CATEGORY>FIXED_LENGTH</CATEGORY>
+              <BASE-TYPE-SIZE>8</BASE-TYPE-SIZE>
+              <BASE-TYPE-ENCODING>NONE</BASE-TYPE-ENCODING>
+              <NATIVE-DECLARATION>uint8</NATIVE-DECLARATION>
+            </SW-BASE-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>DataConstrs</SHORT-NAME>
+          <ELEMENTS>
+            <DATA-CONSTR>
+              <SHORT-NAME>uint8_DataConstr</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                    <UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+          <ELEMENTS>
+            <IMPLEMENTATION-DATA-TYPE>
+              <SHORT-NAME>uint8</SHORT-NAME>
+              <DESC>
+                <L-2 L="FOR-ALL">uint8 represents integers with a minimum value of 0 and a maximum value of 255.
+The order-relation on uint8 is: x &lt; y if y - x is positive.
+uint8 has a lexical representation consisting of a finite-length sequence 
+of decimal digits (#x30-#x39).
+
+For example: 1, 0, 126, +10.</L-2>
+              </DESC>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_Platform/BaseTypes/uint8</BASE-TYPE-REF>
+                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                    <DATA-CONSTR-REF DEST="DATA-CONSTR">/AUTOSAR_Platform/DataConstrs/uint8_DataConstr</DATA-CONSTR-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+              <TYPE-EMITTER>Platform_Type</TYPE-EMITTER>
+            </IMPLEMENTATION-DATA-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>ComponentTypes</SHORT-NAME>
+      <ELEMENTS>
+        <APPLICATION-SW-COMPONENT-TYPE UUID="CF1D0DB1-2B84-4073-9747-CA38688934EE">
+          <SHORT-NAME>BSW_Handler</SHORT-NAME>
+          <PORTS>
+            <R-PORT-PROTOTYPE UUID="CFE88BD4-8AC6-4B42-B41E-DDD6E5564A56">
+              <SHORT-NAME>ComM_UserRequest</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <CLIENT-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest/GetCurrentComMode</OPERATION-REF>
+                </CLIENT-COM-SPEC>
+                <CLIENT-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest/GetMaxComMode</OPERATION-REF>
+                </CLIENT-COM-SPEC>
+                <CLIENT-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest/GetRequestedComMode</OPERATION-REF>
+                </CLIENT-COM-SPEC>
+                <CLIENT-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest/RequestComMode</OPERATION-REF>
+                </CLIENT-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="857655AE-29BB-43FC-897C-0205ECCE36CC">
+              <SHORT-NAME>BSW_Handler_InternalBehavior</SHORT-NAME>
+              <EVENTS>
+                <TIMING-EVENT UUID="EFCBC6AF-C55C-4D5D-A3C1-373660BBA6A0">
+                  <SHORT-NAME>TMT_LightCtrl</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/BSW_Handler/BSW_Handler_InternalBehavior/BSW_Handler_10ms</START-ON-EVENT-REF>
+                  <PERIOD>0.01</PERIOD>
+                </TIMING-EVENT>
+                <INIT-EVENT UUID="B0B7DE47-505A-4B9C-AC85-B1CDE8CD1E55">
+                  <SHORT-NAME>BSW_Handler_InitEvent</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/BSW_Handler/BSW_Handler_InternalBehavior/BSW_Handler_Init</START-ON-EVENT-REF>
+                </INIT-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="480B49FD-0F68-4661-B981-1ED5EAC98326">
+                  <SHORT-NAME>BSW_Handler_10ms</SHORT-NAME>
+                  <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <SERVER-CALL-POINTS>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="F3CB9691-9493-486D-A7CD-0F6A869468A7">
+                      <SHORT-NAME>SC_ComM_UserRequest_GetCurrentComMode</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/BSW_Handler/ComM_UserRequest</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest/GetCurrentComMode</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                      <TIMEOUT>0</TIMEOUT>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="6912BCF7-EB2E-4D96-8138-30560D5D996B">
+                      <SHORT-NAME>SC_ComM_UserRequest_RequestComMode</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/BSW_Handler/ComM_UserRequest</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest/RequestComMode</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                      <TIMEOUT>0</TIMEOUT>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                  </SERVER-CALL-POINTS>
+                  <SYMBOL>BSW_Handler_10ms</SYMBOL>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="804C976F-99EE-4055-9587-0E274A552F91">
+                  <SHORT-NAME>BSW_Handler_Init</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="edve:RunnableKind">
+                        <SD>InitRunnable</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <SERVER-CALL-POINTS>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="63267954-4F0C-42B4-BC2B-46FB1989C744">
+                      <SHORT-NAME>SC_ComM_UserRequest_RequestComMode</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/BSW_Handler/ComM_UserRequest</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest/RequestComMode</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                      <TIMEOUT>0</TIMEOUT>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                  </SERVER-CALL-POINTS>
+                  <SYMBOL>BSW_Handler_Init</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </APPLICATION-SW-COMPONENT-TYPE>
+        <APPLICATION-SW-COMPONENT-TYPE UUID="B8CD58C6-9618-4CF9-9B7D-C0611750C20E">
+          <SHORT-NAME>LightCtrl</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="89A4ED74-DA16-48AF-9F8D-84BE83580FA3">
+              <SHORT-NAME>Output</SHORT-NAME>
+              <PROVIDED-COM-SPECS>
+                <NONQUEUED-SENDER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Output/HeadLight</DATA-ELEMENT-REF>
+                  <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                  <INIT-VALUE>
+                    <NUMERICAL-VALUE-SPECIFICATION>
+                      <VALUE>0</VALUE>
+                    </NUMERICAL-VALUE-SPECIFICATION>
+                  </INIT-VALUE>
+                </NONQUEUED-SENDER-COM-SPEC>
+              </PROVIDED-COM-SPECS>
+              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/Output</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="D076DAC7-A775-4220-AC99-B5083E863692">
+              <SHORT-NAME>Input</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <NONQUEUED-RECEIVER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Input/LightSwitch</DATA-ELEMENT-REF>
+                  <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                  <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                  <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                  <FILTER>
+                    <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                  </FILTER>
+                  <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                  <INIT-VALUE>
+                    <NUMERICAL-VALUE-SPECIFICATION>
+                      <VALUE>0</VALUE>
+                    </NUMERICAL-VALUE-SPECIFICATION>
+                  </INIT-VALUE>
+                </NONQUEUED-RECEIVER-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/Input</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="6B9D04F3-9BAB-4958-8871-E6F3C7A9F5A4">
+              <SHORT-NAME>LightIntensity</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <CLIENT-COM-SPEC>
+                  <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR_SWCS_DEV/IoHwAb_swc/Interfaces/LightIntensity/LightIntensity</OPERATION-REF>
+                </CLIENT-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/MICROSAR_SWCS_DEV/IoHwAb_swc/Interfaces/LightIntensity</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="9FC7BDBA-A1B1-4B48-BB89-7C432817F7E0">
+              <SHORT-NAME>LightCtrl_InternalBehavior</SHORT-NAME>
+              <EVENTS>
+                <TIMING-EVENT UUID="D4AC11BA-412D-4C63-B088-D1B569A314F6">
+                  <SHORT-NAME>TMT_LightCtrl</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/ComponentTypes/LightCtrl/LightCtrl_InternalBehavior/LightCtrl</START-ON-EVENT-REF>
+                  <PERIOD>0.01</PERIOD>
+                </TIMING-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="CF8C8C33-4CDB-470B-8F6C-B6E83850E42B">
+                  <SHORT-NAME>LightCtrl</SHORT-NAME>
+                  <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                    <VARIABLE-ACCESS UUID="9F433D67-DE8F-4D25-8111-993E90CD3FD3">
+                      <SHORT-NAME>REC_Input_AlexSpecialPort_LightSwitch</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/LightCtrl/Input</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Input/LightSwitch</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-RECEIVE-POINT-BY-ARGUMENTS>
+                  <DATA-SEND-POINTS>
+                    <VARIABLE-ACCESS UUID="CB976C10-6443-4BE5-BCF6-B38CB761D479">
+                      <SHORT-NAME>SEND_Output_HeadLight</SHORT-NAME>
+                      <ACCESSED-VARIABLE>
+                        <AUTOSAR-VARIABLE-IREF>
+                          <PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/LightCtrl/Output</PORT-PROTOTYPE-REF>
+                          <TARGET-DATA-PROTOTYPE-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Output/HeadLight</TARGET-DATA-PROTOTYPE-REF>
+                        </AUTOSAR-VARIABLE-IREF>
+                      </ACCESSED-VARIABLE>
+                    </VARIABLE-ACCESS>
+                  </DATA-SEND-POINTS>
+                  <SERVER-CALL-POINTS>
+                    <SYNCHRONOUS-SERVER-CALL-POINT UUID="F894F1A7-8EE9-4F1E-97CB-0DFD13FE51E4">
+                      <SHORT-NAME>SC_LightIntensity_LightIntensity</SHORT-NAME>
+                      <OPERATION-IREF>
+                        <CONTEXT-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/LightCtrl/LightIntensity</CONTEXT-R-PORT-REF>
+                        <TARGET-REQUIRED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR_SWCS_DEV/IoHwAb_swc/Interfaces/LightIntensity/LightIntensity</TARGET-REQUIRED-OPERATION-REF>
+                      </OPERATION-IREF>
+                      <TIMEOUT>0</TIMEOUT>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                  </SERVER-CALL-POINTS>
+                  <SYMBOL>LightCtrl</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </APPLICATION-SW-COMPONENT-TYPE>
+        <SWC-IMPLEMENTATION UUID="A649F8A3-A162-4E80-A06F-62848B552F63">
+          <SHORT-NAME>BSW_Handler_Implementation</SHORT-NAME>
+          <CODE-DESCRIPTORS>
+            <CODE UUID="4F2651D9-3760-4806-B3C7-618D1B80B466">
+              <SHORT-NAME>Default</SHORT-NAME>
+              <ARTIFACT-DESCRIPTORS>
+                <AUTOSAR-ENGINEERING-OBJECT>
+                  <SHORT-LABEL>Default</SHORT-LABEL>
+                  <CATEGORY>SWSRC</CATEGORY>
+                </AUTOSAR-ENGINEERING-OBJECT>
+              </ARTIFACT-DESCRIPTORS>
+            </CODE>
+          </CODE-DESCRIPTORS>
+          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/BSW_Handler/BSW_Handler_InternalBehavior</BEHAVIOR-REF>
+        </SWC-IMPLEMENTATION>
+        <SWC-IMPLEMENTATION UUID="50F9076F-1B74-4C0E-8ABD-27B8D5498049">
+          <SHORT-NAME>LightCtrl_Implementation</SHORT-NAME>
+          <CODE-DESCRIPTORS>
+            <CODE UUID="535989FD-F24F-443D-9AC3-CAC054769DDB">
+              <SHORT-NAME>Default</SHORT-NAME>
+              <ARTIFACT-DESCRIPTORS>
+                <AUTOSAR-ENGINEERING-OBJECT>
+                  <SHORT-LABEL>Default</SHORT-LABEL>
+                  <CATEGORY>SWSRC</CATEGORY>
+                </AUTOSAR-ENGINEERING-OBJECT>
+              </ARTIFACT-DESCRIPTORS>
+            </CODE>
+          </CODE-DESCRIPTORS>
+          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/LightCtrl/LightCtrl_InternalBehavior</BEHAVIOR-REF>
+        </SWC-IMPLEMENTATION>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>DataTypes</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>DataConstrs</SHORT-NAME>
+          <ELEMENTS>
+            <DATA-CONSTR UUID="AA143910-A884-462E-BA39-7AB32EE9D06B">
+              <SHORT-NAME>uint8_DataConstr</SHORT-NAME>
+              <DATA-CONSTR-RULES>
+                <DATA-CONSTR-RULE>
+                  <INTERNAL-CONSTRS>
+                    <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                    <UPPER-LIMIT INTERVAL-TYPE="CLOSED">255</UPPER-LIMIT>
+                  </INTERNAL-CONSTRS>
+                </DATA-CONSTR-RULE>
+              </DATA-CONSTR-RULES>
+            </DATA-CONSTR>
+          </ELEMENTS>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>PlatformTypes</SHORT-NAME>
+          <ELEMENTS>
+            <IMPLEMENTATION-DATA-TYPE UUID="19FE5AF9-32D8-403E-A11B-DE29567170DC">
+              <SHORT-NAME>uint8</SHORT-NAME>
+              <DESC>
+                <L-2 L="FOR-ALL">uint8 represents integers with a minimum value of 0 and a maximum value of 255.
+The order-relation on uint8 is: x &lt; y if y - x is positive.
+uint8 has a lexical representation consisting of a finite-length sequence 
+of decimal digits (#x30-#x39).
+
+For example: 1, 0, 126, +10.</L-2>
+              </DESC>
+              <CATEGORY>VALUE</CATEGORY>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/AUTOSAR_Platform/BaseTypes/uint8</BASE-TYPE-REF>
+                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                    <DATA-CONSTR-REF DEST="DATA-CONSTR">/DataTypes/DataConstrs/uint8_DataConstr</DATA-CONSTR-REF>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+            </IMPLEMENTATION-DATA-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>ECUCompositionTypes</SHORT-NAME>
+      <ELEMENTS>
+        <COMPOSITION-SW-COMPONENT-TYPE UUID="29D7CF82-1729-4FCC-81AB-00C49415B566">
+          <SHORT-NAME>ECU_Composition</SHORT-NAME>
+          <PORTS>
+            <P-PORT-PROTOTYPE UUID="D17EF0FB-F1D4-4E9B-BB01-571401224488">
+              <SHORT-NAME>Output</SHORT-NAME>
+              <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/Output</PROVIDED-INTERFACE-TREF>
+            </P-PORT-PROTOTYPE>
+            <R-PORT-PROTOTYPE UUID="5202BCC8-E78E-4D58-A482-D7426A5CD9FA">
+              <SHORT-NAME>Input</SHORT-NAME>
+              <REQUIRED-COM-SPECS>
+                <NONQUEUED-RECEIVER-COM-SPEC>
+                  <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Input/LightSwitch</DATA-ELEMENT-REF>
+                  <USES-END-TO-END-PROTECTION>false</USES-END-TO-END-PROTECTION>
+                  <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                  <ENABLE-UPDATE>false</ENABLE-UPDATE>
+                  <FILTER>
+                    <DATA-FILTER-TYPE>ALWAYS</DATA-FILTER-TYPE>
+                  </FILTER>
+                  <HANDLE-NEVER-RECEIVED>false</HANDLE-NEVER-RECEIVED>
+                  <INIT-VALUE>
+                    <APPLICATION-VALUE-SPECIFICATION>
+                      <CATEGORY>VALUE</CATEGORY>
+                      <SW-VALUE-CONT>
+                        <SW-VALUES-PHYS>
+                          <V>0</V>
+                        </SW-VALUES-PHYS>
+                      </SW-VALUE-CONT>
+                    </APPLICATION-VALUE-SPECIFICATION>
+                  </INIT-VALUE>
+                </NONQUEUED-RECEIVER-COM-SPEC>
+              </REQUIRED-COM-SPECS>
+              <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/PortInterfaces/Input</REQUIRED-INTERFACE-TREF>
+            </R-PORT-PROTOTYPE>
+          </PORTS>
+          <COMPONENTS>
+            <SW-COMPONENT-PROTOTYPE UUID="0785C6D5-C7A8-418C-97FB-AE4766E86715">
+              <SHORT-NAME>BSW_Handler</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/BSW_Handler</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="77491A19-D4AF-4D2C-906B-DF7A37E40C7F">
+              <SHORT-NAME>IoHwAb</SHORT-NAME>
+              <TYPE-TREF DEST="ECU-ABSTRACTION-SW-COMPONENT-TYPE">/MICROSAR_SWCS_DEV/IoHwAb_swc/ComponentTypes/IoHwAb</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+            <SW-COMPONENT-PROTOTYPE UUID="43CE16CF-838B-4717-82B9-7E04DD29C008">
+              <SHORT-NAME>LightCtrl</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ComponentTypes/LightCtrl</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+          </COMPONENTS>
+          <CONNECTORS>
+            <ASSEMBLY-SW-CONNECTOR UUID="274E15C4-C2E2-46BE-9960-93FF2DC305C6">
+              <SHORT-NAME>IoHwAbDLightIntensityDLightCtrlDLightIntensity</SHORT-NAME>
+              <PROVIDER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECUCompositionTypes/ECU_Composition/IoHwAb</CONTEXT-COMPONENT-REF>
+                <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR_SWCS_DEV/IoHwAb_swc/ComponentTypes/IoHwAb/LightIntensityPort</TARGET-P-PORT-REF>
+              </PROVIDER-IREF>
+              <REQUESTER-IREF>
+                <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECUCompositionTypes/ECU_Composition/LightCtrl</CONTEXT-COMPONENT-REF>
+                <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/LightCtrl/LightIntensity</TARGET-R-PORT-REF>
+              </REQUESTER-IREF>
+            </ASSEMBLY-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="049E8A1C-483C-408F-86EE-284595348E3B">
+              <SHORT-NAME>InputDDLightCtrlDInput</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <R-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECUCompositionTypes/ECU_Composition/LightCtrl</CONTEXT-COMPONENT-REF>
+                  <TARGET-R-PORT-REF DEST="R-PORT-PROTOTYPE">/ComponentTypes/LightCtrl/Input</TARGET-R-PORT-REF>
+                </R-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ECUCompositionTypes/ECU_Composition/Input</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR UUID="3B1BB594-B93A-41DB-9450-8DACD7E1AFEE">
+              <SHORT-NAME>OutputDDLightCtrlDOutput</SHORT-NAME>
+              <INNER-PORT-IREF>
+                <P-PORT-IN-COMPOSITION-INSTANCE-REF>
+                  <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ECUCompositionTypes/ECU_Composition/LightCtrl</CONTEXT-COMPONENT-REF>
+                  <TARGET-P-PORT-REF DEST="P-PORT-PROTOTYPE">/ComponentTypes/LightCtrl/Output</TARGET-P-PORT-REF>
+                </P-PORT-IN-COMPOSITION-INSTANCE-REF>
+              </INNER-PORT-IREF>
+              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ECUCompositionTypes/ECU_Composition/Output</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+          </CONNECTORS>
+        </COMPOSITION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>ComM_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE UUID="9f422535-9942-4a30-be00-638c39e11528">
+                  <SHORT-NAME>ComM_ModeType</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/MICROSAR/ComM_swc/DataTypes/CompuMethods/ComM_ModeType</COMPU-METHOD-REF>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/MICROSAR/ComM_swc/DataTypes/DataConstrs/ComM_ModeType_Constr</DATA-CONSTR-REF>
+                        <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+              </ELEMENTS>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>CompuMethods</SHORT-NAME>
+                  <ELEMENTS>
+                    <COMPU-METHOD UUID="c38044e0-489b-4b15-bfb8-0f8198d8fb42">
+                      <SHORT-NAME>ComM_ModeType</SHORT-NAME>
+                      <CATEGORY>TEXTTABLE</CATEGORY>
+                      <COMPU-INTERNAL-TO-PHYS>
+                        <COMPU-SCALES>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>COMM_NO_COMMUNICATION</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>COMM_NO_COMMUNICATION</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>COMM_SILENT_COMMUNICATION</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">1</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">1</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>COMM_SILENT_COMMUNICATION</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                          <COMPU-SCALE>
+                            <SHORT-LABEL>COMM_FULL_COMMUNICATION</SHORT-LABEL>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">2</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">2</UPPER-LIMIT>
+                            <COMPU-CONST>
+                              <VT>COMM_FULL_COMMUNICATION</VT>
+                            </COMPU-CONST>
+                          </COMPU-SCALE>
+                        </COMPU-SCALES>
+                      </COMPU-INTERNAL-TO-PHYS>
+                    </COMPU-METHOD>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                  <ELEMENTS>
+                    <DATA-CONSTR UUID="aaa4eea0-cf1d-4878-9963-310794ed03ab">
+                      <SHORT-NAME>ComM_ModeType_Constr</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">3</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+              <ELEMENTS>
+                <CLIENT-SERVER-INTERFACE UUID="0f097465-407a-4807-9b3a-b5d4e2037c7f">
+                  <SHORT-NAME>ComM_UserRequest</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="DV_SDG">
+                        <SD GID="DV_BSWM" />
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <IS-SERVICE>true</IS-SERVICE>
+                  <SERVICE-KIND>COM-MANAGER</SERVICE-KIND>
+                  <OPERATIONS>
+                    <CLIENT-SERVER-OPERATION UUID="c8a9afab-d892-4105-b8f4-1f3ccfe41873">
+                      <SHORT-NAME>GetCurrentComMode</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL" />
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="3198dbd3-5d60-487d-a2a2-668e032b151d">
+                          <SHORT-NAME>ComMode</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL" />
+                          </DESC>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS />
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/ComM_swc/DataTypes/ComM_ModeType</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest/E_NOT_OK</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="0566e823-6363-4e12-8e06-645620e12774">
+                      <SHORT-NAME>GetMaxComMode</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL" />
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="88040a54-e8dd-41ed-8331-7f1713784442">
+                          <SHORT-NAME>ComMode</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL" />
+                          </DESC>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS />
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/ComM_swc/DataTypes/ComM_ModeType</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest/E_NOT_OK</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="261aac3e-0a74-4111-9e12-0ca141e8cb3a">
+                      <SHORT-NAME>GetRequestedComMode</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL" />
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="7b91b644-20a6-4e92-b478-5885d9e31496">
+                          <SHORT-NAME>ComMode</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL" />
+                          </DESC>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS />
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/ComM_swc/DataTypes/ComM_ModeType</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest/E_NOT_OK</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                    <CLIENT-SERVER-OPERATION UUID="466f8cda-ae50-4132-a815-8867204f8f4b">
+                      <SHORT-NAME>RequestComMode</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="FOR-ALL" />
+                      </DESC>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="d970fda5-9a6e-4057-beec-2e7e188fecbe">
+                          <SHORT-NAME>ComMode</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL" />
+                          </DESC>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS />
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR/ComM_swc/DataTypes/ComM_ModeType</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                      <POSSIBLE-ERROR-REFS>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest/E_MODE_LIMITATION</POSSIBLE-ERROR-REF>
+                        <POSSIBLE-ERROR-REF DEST="APPLICATION-ERROR">/MICROSAR/ComM_swc/Interfaces/ComM_UserRequest/E_NOT_OK</POSSIBLE-ERROR-REF>
+                      </POSSIBLE-ERROR-REFS>
+                    </CLIENT-SERVER-OPERATION>
+                  </OPERATIONS>
+                  <POSSIBLE-ERRORS>
+                    <APPLICATION-ERROR UUID="80cb156c-295f-4e0d-b4b6-0648552d4a09">
+                      <SHORT-NAME>E_MODE_LIMITATION</SHORT-NAME>
+                      <ERROR-CODE>2</ERROR-CODE>
+                    </APPLICATION-ERROR>
+                    <APPLICATION-ERROR UUID="7ee82b2d-800e-4a35-b263-f76b73ded87c">
+                      <SHORT-NAME>E_MULTIPLE_PNC_ASSIGNED</SHORT-NAME>
+                      <ERROR-CODE>3</ERROR-CODE>
+                    </APPLICATION-ERROR>
+                    <APPLICATION-ERROR UUID="dd5fddca-aee1-4540-bdca-0a34de0dff7d">
+                      <SHORT-NAME>E_NO_PNC_ASSIGNED</SHORT-NAME>
+                      <ERROR-CODE>4</ERROR-CODE>
+                    </APPLICATION-ERROR>
+                    <APPLICATION-ERROR UUID="d6f22e5e-8c44-49b3-bd16-e6115417f748">
+                      <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                      <ERROR-CODE>1</ERROR-CODE>
+                    </APPLICATION-ERROR>
+                  </POSSIBLE-ERRORS>
+                </CLIENT-SERVER-INTERFACE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>MICROSAR_SWCS_DEV</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>ComM_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE UUID="85A1257D-27D9-4DBD-8732-A27388221892">
+                  <SHORT-NAME>Boolean</SHORT-NAME>
+                  <CATEGORY>VALUE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <BASE-TYPE-REF DEST="SW-BASE-TYPE">/MICROSAR_SWCS_DEV/ComM_swc/DataTypes/BaseTypes/Boolean</BASE-TYPE-REF>
+                        <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+              </ELEMENTS>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>BaseTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <SW-BASE-TYPE UUID="9FB45639-55C3-43D1-A86D-D44F4C872FAA">
+                      <SHORT-NAME>Boolean</SHORT-NAME>
+                      <CATEGORY>FIXED_LENGTH</CATEGORY>
+                      <BASE-TYPE-SIZE>1</BASE-TYPE-SIZE>
+                      <BASE-TYPE-ENCODING>BOOLEAN</BASE-TYPE-ENCODING>
+                      <NATIVE-DECLARATION>boolean</NATIVE-DECLARATION>
+                    </SW-BASE-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+        <AR-PACKAGE>
+          <SHORT-NAME>IoHwAb_swc</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>ComponentTypes</SHORT-NAME>
+              <ELEMENTS>
+                <ECU-ABSTRACTION-SW-COMPONENT-TYPE UUID="935DC7A5-2FFD-473D-8A51-46B4A93E7BEB">
+                  <SHORT-NAME>IoHwAb</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="edve:BSWM">
+                        <SD>IoHwAbstraction</SD>
+                        <SD>IoHwAbstraction</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <PORTS>
+                    <P-PORT-PROTOTYPE UUID="C0EAD9BA-BD6D-4D7C-8DA8-BFEB66424AAC">
+                      <SHORT-NAME>LightIntensityPort</SHORT-NAME>
+                      <PROVIDED-COM-SPECS>
+                        <SERVER-COM-SPEC>
+                          <OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR_SWCS_DEV/IoHwAb_swc/Interfaces/LightIntensity/LightIntensity</OPERATION-REF>
+                          <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                        </SERVER-COM-SPEC>
+                      </PROVIDED-COM-SPECS>
+                      <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/MICROSAR_SWCS_DEV/IoHwAb_swc/Interfaces/LightIntensity</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                  </PORTS>
+                  <INTERNAL-BEHAVIORS>
+                    <SWC-INTERNAL-BEHAVIOR UUID="0144664E-D6A6-4EDC-B12B-221C88B5A114">
+                      <SHORT-NAME>IoHwAbInternalBehavior</SHORT-NAME>
+                      <EVENTS>
+                        <INIT-EVENT UUID="22F6213B-83F6-4259-B865-CA100936972A">
+                          <SHORT-NAME>IoHwAb_InitEvent</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR_SWCS_DEV/IoHwAb_swc/ComponentTypes/IoHwAb/IoHwAbInternalBehavior/IoHwAb_Init</START-ON-EVENT-REF>
+                        </INIT-EVENT>
+                        <TIMING-EVENT UUID="EA349EAC-8656-4C91-8B52-9277D831946A">
+                          <SHORT-NAME>Timer_IoHwAb_IoHwAb_IoHwAbHandler</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR_SWCS_DEV/IoHwAb_swc/ComponentTypes/IoHwAb/IoHwAbInternalBehavior/IoHwAb_IoHwAb_IoHwAbHandler</START-ON-EVENT-REF>
+                          <PERIOD>0.001</PERIOD>
+                        </TIMING-EVENT>
+                        <OPERATION-INVOKED-EVENT UUID="9B93C222-E674-413B-92DC-0C6A60B2EA28">
+                          <SHORT-NAME>OIT_IoHwAb_LightIntensityPort_LightIntensity_LightIntensityPort_LightIntensity</SHORT-NAME>
+                          <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/MICROSAR_SWCS_DEV/IoHwAb_swc/ComponentTypes/IoHwAb/IoHwAbInternalBehavior/IoHwAb_LightIntensityPort_LightIntensity</START-ON-EVENT-REF>
+                          <OPERATION-IREF>
+                            <CONTEXT-P-PORT-REF DEST="P-PORT-PROTOTYPE">/MICROSAR_SWCS_DEV/IoHwAb_swc/ComponentTypes/IoHwAb/LightIntensityPort</CONTEXT-P-PORT-REF>
+                            <TARGET-PROVIDED-OPERATION-REF DEST="CLIENT-SERVER-OPERATION">/MICROSAR_SWCS_DEV/IoHwAb_swc/Interfaces/LightIntensity/LightIntensity</TARGET-PROVIDED-OPERATION-REF>
+                          </OPERATION-IREF>
+                        </OPERATION-INVOKED-EVENT>
+                      </EVENTS>
+                      <RUNNABLES>
+                        <RUNNABLE-ENTITY UUID="7CFC217D-4A21-45CC-B769-F571D6921DB6">
+                          <SHORT-NAME>IoHwAb_Init</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="edve:RunnableKind">
+                                <SD>InitRunnable</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>IoHwAb_Init</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                        <RUNNABLE-ENTITY UUID="06C00A68-47DB-45E0-8D9E-7EDB81B6296D">
+                          <SHORT-NAME>IoHwAb_IoHwAb_IoHwAbHandler</SHORT-NAME>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>IoHwAb_IoHwAb_IoHwAbHandler</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                        <RUNNABLE-ENTITY UUID="9C9F8AA5-2EAC-4627-8F28-8159895A413E">
+                          <SHORT-NAME>IoHwAb_LightIntensityPort_LightIntensity</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">Runnable Entity for calling the Operation 'LightIntensity' of the Client/Server Port Prototype 'LightIntensityPort'.</L-2>
+                          </DESC>
+                          <MINIMUM-START-INTERVAL>0</MINIMUM-START-INTERVAL>
+                          <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                          <SYMBOL>IoHwAb_LightIntensityPort_LightIntensity</SYMBOL>
+                        </RUNNABLE-ENTITY>
+                      </RUNNABLES>
+                      <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+                    </SWC-INTERNAL-BEHAVIOR>
+                  </INTERNAL-BEHAVIORS>
+                </ECU-ABSTRACTION-SW-COMPONENT-TYPE>
+                <SWC-IMPLEMENTATION UUID="3FB6BD51-E6EB-4E01-BD9A-11F3EB22C5AD">
+                  <SHORT-NAME>IoHwAbImplementation</SHORT-NAME>
+                  <CODE-DESCRIPTORS>
+                    <CODE UUID="587BA5AD-4F0E-462B-B394-04EFCC2CCA1D">
+                      <SHORT-NAME>Default</SHORT-NAME>
+                      <ARTIFACT-DESCRIPTORS>
+                        <AUTOSAR-ENGINEERING-OBJECT>
+                          <SHORT-LABEL>Default</SHORT-LABEL>
+                          <CATEGORY>SWSRC</CATEGORY>
+                        </AUTOSAR-ENGINEERING-OBJECT>
+                      </ARTIFACT-DESCRIPTORS>
+                    </CODE>
+                  </CODE-DESCRIPTORS>
+                  <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/MICROSAR_SWCS_DEV/IoHwAb_swc/ComponentTypes/IoHwAb/IoHwAbInternalBehavior</BEHAVIOR-REF>
+                </SWC-IMPLEMENTATION>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>DataTypes</SHORT-NAME>
+              <ELEMENTS>
+                <IMPLEMENTATION-DATA-TYPE UUID="695CCE43-3F4B-44AD-8B35-94C81335C5DA">
+                  <SHORT-NAME>uint16</SHORT-NAME>
+                  <CATEGORY>VALUE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <BASE-TYPE-REF DEST="SW-BASE-TYPE">/MICROSAR_SWCS_DEV/IoHwAb_swc/DataTypes/BaseTypes/uint16</BASE-TYPE-REF>
+                        <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                        <DATA-CONSTR-REF DEST="DATA-CONSTR">/MICROSAR_SWCS_DEV/IoHwAb_swc/DataTypes/DataConstrs/uint16_Constr</DATA-CONSTR-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                </IMPLEMENTATION-DATA-TYPE>
+              </ELEMENTS>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>BaseTypes</SHORT-NAME>
+                  <ELEMENTS>
+                    <SW-BASE-TYPE UUID="E3C4C0B9-0A39-4D32-A6ED-A0C133D332B7">
+                      <SHORT-NAME>uint16</SHORT-NAME>
+                      <CATEGORY>FIXED_LENGTH</CATEGORY>
+                      <BASE-TYPE-SIZE>16</BASE-TYPE-SIZE>
+                      <BASE-TYPE-ENCODING>NONE</BASE-TYPE-ENCODING>
+                      <NATIVE-DECLARATION>uint16</NATIVE-DECLARATION>
+                    </SW-BASE-TYPE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>DataConstrs</SHORT-NAME>
+                  <ELEMENTS>
+                    <DATA-CONSTR UUID="652C7EC4-6FC4-4575-985D-8B6FF27305B4">
+                      <SHORT-NAME>uint16_Constr</SHORT-NAME>
+                      <DATA-CONSTR-RULES>
+                        <DATA-CONSTR-RULE>
+                          <INTERNAL-CONSTRS>
+                            <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                            <UPPER-LIMIT INTERVAL-TYPE="CLOSED">65535</UPPER-LIMIT>
+                          </INTERNAL-CONSTRS>
+                        </DATA-CONSTR-RULE>
+                      </DATA-CONSTR-RULES>
+                    </DATA-CONSTR>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>Interfaces</SHORT-NAME>
+              <ELEMENTS>
+                <CLIENT-SERVER-INTERFACE UUID="AC0AB88A-6EF5-485B-AA82-41ED4095EFB5">
+                  <SHORT-NAME>LightIntensity</SHORT-NAME>
+                  <IS-SERVICE>false</IS-SERVICE>
+                  <OPERATIONS>
+                    <CLIENT-SERVER-OPERATION UUID="ACBBF87C-7436-43E4-9D68-14806BDAD876">
+                      <SHORT-NAME>LightIntensity</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE UUID="AB6D2196-1856-4E33-B8F5-FA5C527E1C9E">
+                          <SHORT-NAME>io_signal</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                          <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR_SWCS_DEV/IoHwAb_swc/DataTypes/uint16</TYPE-TREF>
+                          <DIRECTION>OUT</DIRECTION>
+                          <SERVER-ARGUMENT-IMPL-POLICY>USE-ARGUMENT-TYPE</SERVER-ARGUMENT-IMPL-POLICY>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                  </OPERATIONS>
+                  <POSSIBLE-ERRORS>
+                    <APPLICATION-ERROR UUID="5FA0DC45-2D7C-4CCA-BECE-644CE69311A1">
+                      <SHORT-NAME>E_NOT_OK</SHORT-NAME>
+                      <ERROR-CODE>1</ERROR-CODE>
+                    </APPLICATION-ERROR>
+                  </POSSIBLE-ERRORS>
+                </CLIENT-SERVER-INTERFACE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>PortInterfaces</SHORT-NAME>
+      <ELEMENTS>
+        <SENDER-RECEIVER-INTERFACE UUID="F0308111-0F81-4870-9EAC-50D5D34EF413">
+          <SHORT-NAME>Input</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <DATA-ELEMENTS>
+            <VARIABLE-DATA-PROTOTYPE UUID="2764E767-87D3-45E0-A6C3-E1BA02857E3E">
+              <SHORT-NAME>LightSwitch</SHORT-NAME>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/DataTypes/PlatformTypes/uint8</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </DATA-ELEMENTS>
+          <INVALIDATION-POLICYS>
+            <INVALIDATION-POLICY>
+              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Input/LightSwitch</DATA-ELEMENT-REF>
+              <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+            </INVALIDATION-POLICY>
+          </INVALIDATION-POLICYS>
+        </SENDER-RECEIVER-INTERFACE>
+        <SENDER-RECEIVER-INTERFACE UUID="081F55B3-0FD4-4B14-95B4-177D8F2F66D0">
+          <SHORT-NAME>Output</SHORT-NAME>
+          <IS-SERVICE>false</IS-SERVICE>
+          <DATA-ELEMENTS>
+            <VARIABLE-DATA-PROTOTYPE UUID="1CE72262-3D22-4CAA-A7ED-59998A16AB58">
+              <SHORT-NAME>HeadLight</SHORT-NAME>
+              <SW-DATA-DEF-PROPS>
+                <SW-DATA-DEF-PROPS-VARIANTS>
+                  <SW-DATA-DEF-PROPS-CONDITIONAL>
+                    <SW-CALIBRATION-ACCESS>NOT-ACCESSIBLE</SW-CALIBRATION-ACCESS>
+                    <SW-IMPL-POLICY>STANDARD</SW-IMPL-POLICY>
+                  </SW-DATA-DEF-PROPS-CONDITIONAL>
+                </SW-DATA-DEF-PROPS-VARIANTS>
+              </SW-DATA-DEF-PROPS>
+              <TYPE-TREF DEST="IMPLEMENTATION-DATA-TYPE">/MICROSAR_SWCS_DEV/ComM_swc/DataTypes/Boolean</TYPE-TREF>
+            </VARIABLE-DATA-PROTOTYPE>
+          </DATA-ELEMENTS>
+          <INVALIDATION-POLICYS>
+            <INVALIDATION-POLICY>
+              <DATA-ELEMENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/PortInterfaces/Output/HeadLight</DATA-ELEMENT-REF>
+              <HANDLE-INVALID>DONT-INVALIDATE</HANDLE-INVALID>
+            </INVALIDATION-POLICY>
+          </INVALIDATION-POLICYS>
+        </SENDER-RECEIVER-INTERFACE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,47 @@
+###############################################################
+# See README.md file for setup reference of your home RC file #
+###############################################################
+
+common --enable_platform_specific_config
+common --announce_rc
+common --show_timestamps
+common --remote_cache=https://pes-dos-bazel-remote-cache.prod.bazel.pes.k8s.vector.int
+common --enable_bzlmod
+# Enable only downloading toplevel build output
+common --remote_download_toplevel
+
+# There will have to be a better way to add this
+common --registry=file:///%workspace%/vector-bazel-central-registry
+common --registry=https://raw.githubusercontent.com/bazelbuild/bazel-central-registry/main
+
+# General build options
+build --verbose_failures
+build --sandbox_debug 
+build --subcommands
+build --toolchain_resolution_debug=".*"
+build --incompatible_enable_cc_toolchain_resolution
+build --experimental_writable_outputs
+build --remote_timeout=3600
+build --compilation_mode=dbg
+build --incompatible_strict_action_env
+build --action_env=PATH=""
+build --host_action_env=PATH=""
+build --enable_runfiles
+build --action_env=CC="/bin/false"
+
+# Set java_runtime_version so Bazel can handle the jdk toolchain
+build --java_runtime_version=remotejdk_21
+
+# Removed this setting, because we disable the write-protection in the bazel-bin cfg5-workspace
+
+# build --experimental_guard_against_concurrent_changes
+
+# Linux only build options
+build:linux --repository_cache='/tmp/bazel/bazel_repository_cache'
+build:linux --action_env=TASKING_LICENSE_KEY=1d6c-8159-2cbc-0e1f
+build:linux --spawn_strategy=sandboxed,local
+
+# Windows only build options
+build:windows --features=-pic
+build:windows --action_env=TASKING_LICENSE_KEY=571e-ae03-3569-b8ee
+build:windows --spawn_strategy=local

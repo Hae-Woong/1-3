@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="aa952118-2977-4a1d-9074-0062cae3fea6">
+          <SHORT-NAME>Can_30_Core_ib_bswmd</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="82e45655-2b0d-4276-b0ad-bd0bfc6ba8b3">
+              <SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
+              <ELEMENTS>
+                <BSW-MODULE-DESCRIPTION UUID="fe059536-da83-4973-bb27-e7e2a16074df">
+                  <SHORT-NAME>Can</SHORT-NAME>
+                  <PROVIDED-ENTRYS>
+                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                      <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can_30_Core_MainFunction_Write</BSW-MODULE-ENTRY-REF>
+                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                      <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can_30_Core_MainFunction_Read</BSW-MODULE-ENTRY-REF>
+                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                      <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can_30_Core_MainFunction_BusOff</BSW-MODULE-ENTRY-REF>
+                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                      <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can_30_Core_MainFunction_Wakeup</BSW-MODULE-ENTRY-REF>
+                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                      <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can_30_Core_MainFunction_Mode</BSW-MODULE-ENTRY-REF>
+                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  </PROVIDED-ENTRYS>
+                  <INTERNAL-BEHAVIORS>
+                    <BSW-INTERNAL-BEHAVIOR UUID="a83d5281-5622-4b6c-a698-9e67ede72f06">
+                      <SHORT-NAME>Can_CoreBehavior</SHORT-NAME>
+                      <EXCLUSIVE-AREAS>
+                        <EXCLUSIVE-AREA UUID="ca4e1e9f-632a-4616-8ef0-a6d1ef81a9c8">
+                          <SHORT-NAME>CAN_30_CORE_EXCLUSIVE_AREA_1</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="438db0de-bba0-4e7e-83f8-a9ae2d518dab">
+                          <SHORT-NAME>CAN_30_CORE_EXCLUSIVE_AREA_2</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="75b7b675-02db-4b94-8dec-894b596a74e5">
+                          <SHORT-NAME>CAN_30_CORE_EXCLUSIVE_AREA_4</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="417a5614-35f0-4f16-8646-1689048f06ba">
+                          <SHORT-NAME>CAN_30_CORE_EXCLUSIVE_AREA_5</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="8f03ec39-1ed1-45b7-9ef6-9d747fe065a2">
+                          <SHORT-NAME>CAN_30_CORE_EXCLUSIVE_AREA_6</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="5cbadb3b-b3d9-45dd-87c4-2f7a32a72f5b">
+                          <SHORT-NAME>CAN_30_CORE_EXCLUSIVE_AREA_7</SHORT-NAME>
+                        </EXCLUSIVE-AREA>
+                      </EXCLUSIVE-AREAS>
+                      <ENTITYS>
+                        <BSW-SCHEDULABLE-ENTITY UUID="9ce804e2-a3f1-45d4-be57-36c7d5cab899">
+                          <SHORT-NAME>Can_30_Core_MainFunction_Write</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_2</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_4</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_5</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_6</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_7</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can_30_Core_MainFunction_Write</IMPLEMENTED-ENTRY-REF>
+                        </BSW-SCHEDULABLE-ENTITY>
+                        <BSW-SCHEDULABLE-ENTITY UUID="7cb6a7f7-fdda-423b-9dd8-d1d433a5e596">
+                          <SHORT-NAME>Can_30_Core_MainFunction_Read</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_2</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_4</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_5</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_6</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_7</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can_30_Core_MainFunction_Read</IMPLEMENTED-ENTRY-REF>
+                        </BSW-SCHEDULABLE-ENTITY>
+                        <BSW-SCHEDULABLE-ENTITY UUID="a026a947-484c-4343-ab2c-c25596a8e055">
+                          <SHORT-NAME>Can_30_Core_MainFunction_BusOff</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_2</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_4</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_5</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_6</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_7</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can_30_Core_MainFunction_BusOff</IMPLEMENTED-ENTRY-REF>
+                        </BSW-SCHEDULABLE-ENTITY>
+                        <BSW-SCHEDULABLE-ENTITY UUID="0ccfbb8b-601f-4b57-8a98-f220d685f08e">
+                          <SHORT-NAME>Can_30_Core_MainFunction_Wakeup</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_2</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_4</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_5</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_6</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_7</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can_30_Core_MainFunction_Wakeup</IMPLEMENTED-ENTRY-REF>
+                        </BSW-SCHEDULABLE-ENTITY>
+                        <BSW-SCHEDULABLE-ENTITY UUID="542bf43d-54a9-47ca-a742-b1a2420305bd">
+                          <SHORT-NAME>Can_30_Core_MainFunction_Mode</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_2</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_4</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_5</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_6</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/CAN_30_CORE_EXCLUSIVE_AREA_7</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can_30_Core_MainFunction_Mode</IMPLEMENTED-ENTRY-REF>
+                        </BSW-SCHEDULABLE-ENTITY>
+                      </ENTITYS>
+                      <EVENTS>
+                        <BSW-TIMING-EVENT UUID="3c88f46b-5207-462a-badb-603974b40446">
+                          <SHORT-NAME>Can_30_Core_MainFunction_WriteTimingEvent0</SHORT-NAME>
+                          <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/Can_30_Core_MainFunction_Write</STARTS-ON-EVENT-REF>
+                          <PERIOD>1</PERIOD>
+                        </BSW-TIMING-EVENT>
+                        <BSW-TIMING-EVENT UUID="ca14cea8-b3fe-4cb2-b22e-7ade2429f904">
+                          <SHORT-NAME>Can_30_Core_MainFunction_ReadTimingEvent0</SHORT-NAME>
+                          <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/Can_30_Core_MainFunction_Read</STARTS-ON-EVENT-REF>
+                          <PERIOD>1</PERIOD>
+                        </BSW-TIMING-EVENT>
+                        <BSW-TIMING-EVENT UUID="02ad0cc1-37e8-4811-a55e-e650d10de6d3">
+                          <SHORT-NAME>Can_30_Core_MainFunction_BusOffTimingEvent0</SHORT-NAME>
+                          <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/Can_30_Core_MainFunction_BusOff</STARTS-ON-EVENT-REF>
+                          <PERIOD>0.01</PERIOD>
+                        </BSW-TIMING-EVENT>
+                        <BSW-TIMING-EVENT UUID="f1448c6d-b7e5-4eab-95e3-9b811eda4bf9">
+                          <SHORT-NAME>Can_30_Core_MainFunction_WakeupTimingEvent0</SHORT-NAME>
+                          <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/Can_30_Core_MainFunction_Wakeup</STARTS-ON-EVENT-REF>
+                          <PERIOD>0.01</PERIOD>
+                        </BSW-TIMING-EVENT>
+                        <BSW-TIMING-EVENT UUID="cb427730-705e-4c0a-a78a-c44f39830612">
+                          <SHORT-NAME>Can_30_Core_MainFunction_ModeTimingEvent0</SHORT-NAME>
+                          <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/MICROSAR/Can_30_Core_ib_bswmd/BswModuleDescriptions/Can/Can_CoreBehavior/Can_30_Core_MainFunction_Mode</STARTS-ON-EVENT-REF>
+                          <PERIOD>0.01</PERIOD>
+                        </BSW-TIMING-EVENT>
+                      </EVENTS>
+                    </BSW-INTERNAL-BEHAVIOR>
+                  </INTERNAL-BEHAVIORS>
+                </BSW-MODULE-DESCRIPTION>
+                <BSW-MODULE-ENTRY UUID="b17b00b1-0ca7-48b4-8bc9-47b699145d72">
+                  <SHORT-NAME>Can_30_Core_MainFunction_Write</SHORT-NAME>
+                  <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="6eec94ce-3dbd-49e8-ac8b-0b6ea0ff196d">
+                  <SHORT-NAME>Can_30_Core_MainFunction_Read</SHORT-NAME>
+                  <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="ef360dca-e7ac-470b-9132-88edab1e2700">
+                  <SHORT-NAME>Can_30_Core_MainFunction_BusOff</SHORT-NAME>
+                  <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="a0ef15b4-1bc1-4df3-b6ef-9eaefea0f207">
+                  <SHORT-NAME>Can_30_Core_MainFunction_Wakeup</SHORT-NAME>
+                  <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="b4ae30b8-51d0-4830-9527-ed2b2f44fabc">
+                  <SHORT-NAME>Can_30_Core_MainFunction_Mode</SHORT-NAME>
+                  <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

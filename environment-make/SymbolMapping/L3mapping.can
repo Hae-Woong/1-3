@@ -1,0 +1,18 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+
+}
+
+variables
+{
+
+}
+
+on transmit_value ApplicationObjects::Mapping.LightIntensity {
+  Write("monitored LightIntensity: %f", $this);
+
+  // converting percent to 5.0 volts
+  @sysvar::VTT::BFC::Adc::AdcLightIntensity = 0.05 * $this;
+  
+}

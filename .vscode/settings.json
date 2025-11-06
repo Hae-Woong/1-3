@@ -1,0 +1,6 @@
+{
+    "python.envFile": "${workspaceFolder}/.vector/vector.env",
+    "files.associations": {
+        "rte_iohwab.h": "c"
+    }
+}

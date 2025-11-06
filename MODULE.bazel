@@ -1,0 +1,47 @@
+"""This is the new entry point instead of the WORKSPACE"""
+
+# Official packages
+bazel_dep(name = "rules_cc", version = "0.1.1")
+bazel_dep(name = "platforms", version = "0.0.11")
+
+http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+new_local_repository = use_repo_rule("@bazel_tools//tools/build_defs/repo:local.bzl", "new_local_repository")
+
+# Pull tasking
+http_archive(
+    name = "tasking_windows",
+    auth_patterns = {
+        "artifactory.vi.vector.int": "Bearer <password>",
+    },
+    build_file = "//:third_party/default_export.bzl",
+    sha256 = "eabcbfbe334df92dac2a12d02a154c4a467784d3094dacd0b71397193f2192e4",
+    strip_prefix = "tasking_windows-1.0.0",
+    url = "https://artifactory.vi.vector.int/artifactory/pes-ops-generic-prod-local/vector-bazel-modules/tasking_windows/tasking_windows-1.0.0-fed1a6c1.zip",
+)
+
+
+new_local_repository(
+    name = "sip",
+    path = "../BSW",
+    build_file = "//:third_party/SIP.bzl",
+)
+
+tasking_license_from_env = use_repo_rule("//toolchains/tasking:defs.bzl", "tasking_license_from_env")
+
+tasking_license_from_env(
+    name = "tasking_license",
+    license_key_env = "TASKING_LICENSE_KEY",
+    license_product = "SW160800",
+    license_servers = [
+        "lic1.tasking.com:8080",
+        "lic3.tasking.com:8080",
+        "lic1.tasking.com:8936",
+        "lic3.tasking.com:8936",
+        "lic1.tasking.com:80",
+        "lic3.tasking.com:80",
+    ],
+)
+
+register_toolchains(
+    "//:tasking_windows",
+)

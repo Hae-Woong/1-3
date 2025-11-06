@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules version="1">
+	<module productCode="00183C00" interface="0" dpramLength="1000" dpramStartAddress="0F00">
+		<values>
+			<block start="00" len="04" type="write" sync="yes">
+				<v id="80000100" b="00" l="20" d="00000001"/>
+			</block>
+			<block start="00" len="04" type="write" sync="yes">
+				<v id="80000200" b="00" l="20" d="00000002"/>
+			</block>
+			<block start="00" len="04" type="write" sync="yes">
+				<v id="80000300" b="00" l="20" d="00000003"/>
+			</block>
+			<block start="00" len="04" type="write" sync="yes">
+				<v id="80000400" b="00" l="20" d="00000004"/>
+			</block>
+			<block start="00" len="04" type="write" sync="yes">
+				<v id="80000500" b="00" l="20" d="00000005"/>
+			</block>
+			<block start="00" len="04" type="write" sync="yes">
+				<v id="F0001800" b="00" l="20" d="00000040"/>
+			</block>      
+		</values>
+	</module>
+</modules>

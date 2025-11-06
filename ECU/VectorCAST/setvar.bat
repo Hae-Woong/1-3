@@ -1,0 +1,2 @@
+set TESTINSS_DAT=%~dp0\TESTINSS.DAT
+del /f /q %TESTINSS_DAT%

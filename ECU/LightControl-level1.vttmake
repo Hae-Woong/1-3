@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BuildSpecification xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="6.2">
+  <Settings>
+    <ProjectName>vECU_LVL1</ProjectName>
+  </Settings>
+  <BuildBswEmulatedSut>
+    <EcuName>BFC</EcuName>
+    <EcuOutputDir>BFC</EcuOutputDir>
+    <SystemDescriptionFiles>
+      <File>LightCtrl.arxml</File>
+    </SystemDescriptionFiles>
+    <Configuration>
+      <ComM>
+        <ChannelsAndUsers>
+          <User Name="ComM_UserRequest">
+            <MappedToAllChannels />
+          </User>
+        </ChannelsAndUsers>
+        <TminFullComModeDuration>5</TminFullComModeDuration>
+        <NmLightTimeout>10</NmLightTimeout>
+        <RequestProcessingTime>0.01</RequestProcessingTime>
+      </ComM>
+      <Diagnostics />
+      <EcuM>
+        <RunMinDuration>INF</RunMinDuration>
+        <DefaultShutdownTarget>Sleep</DefaultShutdownTarget>
+      </EcuM>
+      <ServiceMappings>
+        <ServiceMapping ServiceInterfaceType="ComM_UserRequest">
+          <Port>ECU_Composition::BSW_Handler::ComM_UserRequest</Port>
+          <Value>ComM_UserRequest</Value>
+        </ServiceMapping>
+      </ServiceMappings>
+      <TaskMappings>
+        <Task Name="Task">
+          <MappedRunnable SwcPath="ECU_Composition::BSW_Handler" RunnableName="BSW_Handler_Init" />
+          <MappedRunnable SwcPath="ECU_Composition::IoHwAb" RunnableName="IoHwAb_Init" />
+          <MappedRunnable SwcPath="ECU_Composition::BSW_Handler" RunnableName="BSW_Handler_10ms" />
+          <MappedRunnable SwcPath="ECU_Composition::IoHwAb" RunnableName="IoHwAb_IoHwAb_IoHwAbHandler" />
+          <MappedRunnable SwcPath="ECU_Composition::LightCtrl" RunnableName="LightCtrl" />
+        </Task>
+      </TaskMappings>
+    </Configuration>
+    <VsSolutionPath>Solution\vECU_LVL1.sln</VsSolutionPath>
+    <ExecutionEnvironment>
+      <CommunicationInterface>DistributedObjects</CommunicationInterface>
+      <DataTypesNamespace>$(PROJECTNAME)_Types</DataTypesNamespace>
+      <DataObjectsNamespace>$(PROJECTNAME)</DataObjectsNamespace>
+    </ExecutionEnvironment>
+    <BuildSettings>
+      <VerboseLevel>Low</VerboseLevel>
+      <SutOutputDir>Level1SUT</SutOutputDir>
+    </BuildSettings>
+    <RuntimeSettings>
+      <AutostartEcu>true</AutostartEcu>
+    </RuntimeSettings>
+    <GenerateVcxProject>
+      <VsSolutionGuid>396504CE-941F-4719-915B-08B35CC0EAEB</VsSolutionGuid>
+      <VsTargetVersion>VS2022</VsTargetVersion>
+      <TargetPlatform>Windows_x86</TargetPlatform>
+      <VcxProjectGuid>94FCACF4-FEA7-4B38-AB22-3DA0269D35EB</VcxProjectGuid>
+      <SourceFiles>
+        <File>.\BFC\Appl\Source\BSW_Handler.c</File>
+        <File>.\BFC\Appl\Source\IoHwAb.c</File>
+        <File>.\BFC\Appl\Source\LightCtrl.c</File>
+      </SourceFiles>
+      <IncludeFolders>
+        <IncludeFolder Configuration="All">.\BFC\Appl\IncludeLvl1</IncludeFolder>
+      </IncludeFolders>
+      <PreprocessorDefinitions>
+        <PreprocessorDefinition Configuration="Release">VTT_ENABLE_CUSTOMVARS</PreprocessorDefinition>
+        <PreprocessorDefinition Configuration="Release">LEVEL1_vECU</PreprocessorDefinition>
+        <PreprocessorDefinition Configuration="Debug">VTT_ENABLE_CUSTOMVARS</PreprocessorDefinition>
+        <PreprocessorDefinition Configuration="Debug">LEVEL1_vECU</PreprocessorDefinition>
+      </PreprocessorDefinitions>
+    </GenerateVcxProject>
+    <BuildVsSolution>
+      <VsConfiguration>Release</VsConfiguration>
+    </BuildVsSolution>
+    <GenerateZip />
+  </BuildBswEmulatedSut>
+</BuildSpecification>

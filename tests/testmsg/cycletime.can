@@ -1,0 +1,46 @@
+/*@!Encoding:65001*/
+
+includes
+{
+}
+
+variables
+{
+  message LightCtrl myMsg;
+  dword newsample, previous_sample, difftime; 
+  float float_difftime;
+}
+
+
+export testfunction testwaitformsg (){
+
+  int i;
+  
+  for(i = 0; i < 10; i++){  
+    testWaitForMessage(LightCtrl, 1000);
+    testGetWaitEventMsgData(myMsg);
+    newsample = myMsg.TIME;
+  
+    if(previous_sample == 0){
+      //do nothing
+    }
+    else{
+      difftime = newsample - previous_sample;
+      float_difftime = difftime / 100.0; //changed to ms from micro seconds
+      if((float_difftime > LightCtrl.GenMsgCycleTime - 1) && (float_difftime < LightCtrl.GenMsgCycleTime + 1)){
+        testStepPass("Msg is in correct cycletime");
+      }  
+      else{
+        testStepFail("Msg is not in correct cycletime");
+      } 
+    }
+      previous_sample = newsample;
+  }
+
+}
+export testcase CheckCycleTime(){
+  testWaitForTimeout(1000);
+  testwaitformsg();
+  testWaitForTimeout(1000);
+ 
+}

@@ -1,0 +1,7 @@
+version: 2.3.0
+
+test-tree:
+  - capl-test-case: CheckCycleTime
+    title: TC CheckCycleTime
+    description: Check msg cycletime
+    id: CheckCycleTime

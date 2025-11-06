@@ -1,0 +1,592 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Vector.vFlash.Automation.vFlash</name>
+    </assembly>
+    <members>
+        <member name="T:Vector.vFlash.Automation.vFlash.VFlashReportOptions">
+            <summary>
+            Configuration flags for reporting.
+            </summary>
+            <remarks>
+            The Report Options are flags that control the behavior of the report generation. The flags are bit-encoded and can be combined.
+            </remarks>
+        </member>
+        <member name="F:Vector.vFlash.Automation.vFlash.VFlashReportOptions.Default">
+            <summary>
+            By default the following settings apply
+            <br/>- Flash scripts and Custom Action scripts may write into the report.
+            <br/>- When the same report file path is used, the report is overwritten.
+            <br/>- The script may change the report path.
+            </summary>
+        </member>
+        <member name="F:Vector.vFlash.Automation.vFlash.VFlashReportOptions.DisableFlashScriptReporting">
+            <summary>
+            Calls to reporting methods in Flash scripts are ignored and basic reporting is disabled.
+            </summary>
+        </member>
+        <member name="F:Vector.vFlash.Automation.vFlash.VFlashReportOptions.DisableCustomActionReporting">
+            <summary>
+            Calls to reporting methods in Custom Action scripts are ignored.
+            </summary>
+        </member>
+        <member name="F:Vector.vFlash.Automation.vFlash.VFlashReportOptions.DenyOverwritingReportPathInScript">
+            <summary>
+            Calls to overwrite the report path in scripts are ignored.
+            </summary>
+        </member>
+        <member name="F:Vector.vFlash.Automation.vFlash.VFlashReportOptions.AppendToExistingReport">
+            <summary>
+            If the report file already exists, the report is not overwritten but appended.
+            </summary>
+        </member>
+        <member name="T:Vector.vFlash.Automation.CallbackProgressDelegate">
+            <summary>
+            Delegate reporting the flash progress in percent and the remaining time in [sec].
+            </summary>
+            <param name="progressInPercent">Flash progress in percent</param>
+            <param name="remainingTimeInSeconds">Remaining time in [sec]</param>
+            <remarks>Do not call any other vFlash Automation API method within this delegate.</remarks>
+        </member>
+        <member name="T:Vector.vFlash.Automation.CallbackStatusDelegate">
+            <summary>
+            Delegate reporting the status of the flash process. The flash process has completed, either 
+            if "Success" or an error is signaled.
+            </summary>
+            <param name="flashStatus">The flash status</param>
+            <remarks>Do not call any other vFlash Automation API method within this delegate.</remarks> 
+        </member>
+        <member name="T:Vector.vFlash.Automation.VFlashAPI">
+            <summary>
+            API for vFlash Automation.
+            </summary>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.Initialize">
+            <summary>
+            Synchronously initializes the vFlash library. Initializing is required before executing any other command. 
+            </summary>
+            <returns>VFlashResult: Error or success information.</returns>
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+              </list>
+            </remarks>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.Deinitialize">
+            <summary>
+             The library has to be deinitialized as last step to free allocated resources. 
+            </summary>
+            <returns>VFlashResult: Error or success information.</returns>
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+              </list>
+            </remarks>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.LoadProject(System.String)">
+            <summary>
+            Synchronously loads a packed project (.vflashpack) containing the flashware.
+            </summary>
+            <param name="path">Path to a packed vFlash project.</param>    
+            <returns>VFlashResult: Error or success information.</returns>
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+                <item>
+                  <description>Relative project paths are not supported on vFlash Automation and vFlash Station Automation API</description>
+                </item>
+              </list>
+            </remarks>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.UnloadProject">
+            <summary>
+            Synchronously unloads a project.
+            </summary>
+            <returns>VFlashResult: Error or success information.</returns>
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+              </list>
+            </remarks>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.ActivateNetwork">
+            <summary>
+            Synchronously activates the FlexRay Network Management for a FlexRay network. In case 
+            no Network Management is required (vFlash does not have to simulate a Coldstart Node), 
+            the function call completes successfully, but with actually no operation.
+            </summary>
+            <returns>VFlashResult: Error or success information.</returns>
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+              </list>
+            </remarks>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.Start(Vector.vFlash.Automation.CallbackProgressDelegate,Vector.vFlash.Automation.CallbackStatusDelegate)">
+            <summary>
+            Asynchronously starts the flash process. 
+            </summary>
+            <param name="progressCallback">Delegate reporting the flash progress
+            in percent and the remaining time in [sec].</param>
+            <param name="statusCallback">Delegate reporting the status of the flash 
+            process. The flash process has completed, either if "Success" or an error is signaled.</param>
+            <returns>VFlashResult: Error or success information.</returns>
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+              </list>
+            </remarks>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.Stop">
+            <summary>
+            Synchronously stops flashing the project specified by the projectHandle.
+            </summary>
+            <returns>VFlashResult: Error or success information.</returns>
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+              </list>
+            </remarks>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.SetFlashAttribute(System.String,System.String)">
+             <summary>
+             The method sets the value of an existing Flash Attribute. 
+             The conversion from the string into the Flash Attribute's type has to be possible.
+             </summary>
+             
+             <param name="attributeName">Name of FlashAttribute. It has to exist in the vFlash project.</param>    
+             <param name="attributeValue">
+             Value of FlashAttribute needs to be convertible into the attribute type.<br/>
+             Available Attribute Types: String, UInt32, Int32, Double, Byte[].<br/>
+             Format for String: "Value of attribute".<br/>
+             Format for UInt32: "123".<br/>
+             Format for Int32: "-123".<br/>
+             Format for Double: "123.45".<br/>
+             Format for Byte[]: "0x1234ABCDEF", "12 34 AB CD EF", "12, 34, AB, CD, EF", "0x12 0x34 0xAB 0xCD 0xEF", "0x12, 0x34, 0xAB, 0xCD, 0xEF".<br/>
+             Hint: Bytes are always considered as hexadecimal values.
+             </param>    
+             <returns>
+             VFlashResult: Success, AttributeNotFound, AttributeConversionFailed
+             </returns>
+             
+             <remarks>
+               <list type="bullet">
+                 <item>
+                   <description>Method is not thread-safe.</description>
+                 </item>
+                 <item>
+                   <description>Method is synchronous.</description>
+                 </item>
+                 <item>
+                   <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                 </item>
+               </list>
+             </remarks>
+             
+              <example>
+             <code>
+             //Example for setting a value of type String:
+             VFlashResult result = flashApi.SetFlashAttribute("FlashAttributeTypeString", "Value of attribute");
+            
+             //Example for setting a value of type UInt32 as string: 
+             VFlashResult result = flashApi.SetFlashAttribute("FlashAttributeTypeUInt32", "123");
+            
+             //Example for setting a value of type Int32 as string: 
+             VFlashResult result = flashApi.SetFlashAttribute("FlashAttributeTypeInt32", "-123");
+            
+             //Example for setting a value of type Double as string: 
+             VFlashResult result = flashApi.SetFlashAttribute("FlashAttributeTypeDouble", "123.45");
+            
+             //Example for setting a value of type Byte[] as string: 
+             VFlashResult result = flashApi.SetFlashAttribute("FlashAttributeTypeByteArray", "0x1234ABCDEF");
+             </code>
+             </example>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.SetCustomActionAttribute(System.String,System.String)">
+             <summary>
+             The method sets the value of an existing Custom Action Attribute. 
+             The conversion from the string into the Custom Action Attribute's type has to be possible.
+             </summary>
+             
+             <param name="attributeName">Name of CustomActionAttribute. It has to exist in the vFlash project.</param>    
+             <param name="attributeValue">
+             Value of CustomActionAttribute needs to be convertible into the attribute type.<br/>
+             Available Attribute Types: String, UInt32, Int32, Double, Byte[].<br/>
+             Format for String: "Value of attribute".<br/>
+             Format for UInt32: "123".<br/>
+             Format for Int32: "-123".<br/>
+             Format for Double: "123.45".<br/>
+             Format for Byte[]: "0x1234ABCDEF", "12 34 AB CD EF", "12, 34, AB, CD, EF", "0x12 0x34 0xAB 0xCD 0xEF", "0x12, 0x34, 0xAB, 0xCD, 0xEF".<br/>
+             Hint: Bytes are always considered as hexadecimal values.
+             </param>    
+             <returns>VFlashResult: Success, AttributeNotFound, AttributeConversionFailed</returns>
+             
+             <remarks>
+               <list type="bullet">
+                 <item>
+                   <description>Method is not thread-safe.</description>
+                 </item>
+                 <item>
+                   <description>Method is synchronous.</description>
+                 </item>
+                 <item>
+                   <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                 </item>
+               </list>
+             </remarks>
+             
+             <example>
+             <code>
+             //Example for setting a value of type "String":
+             VFlashResult result = flashApi.SetCustomActionAttribute("CustomActionAttributeTypeString", "Value of attribute");
+            
+             //Example for setting a value of type "UInt32" as string: 
+             VFlashResult result = flashApi.SetCustomActionAttribute("CustomActionAttributeTypeUInt32", "123");
+            
+             //Example for setting a value of type "Int32" as string: 
+             VFlashResult result = flashApi.SetCustomActionAttribute("CustomActionAttributeTypeInt32", "-123");
+            
+             //Example for setting a value of type "Double" as string: 
+             VFlashResult result = flashApi.SetCustomActionAttribute("CustomActionAttributeTypeDouble", "123.45");
+            
+             //Example for setting a value of type Byte[] as string. 
+             VFlashResult result = flashApi.SetCustomActionAttribute("CustomActionAttributeTypeByteArray", "0x1234ABCDEF");
+             </code>
+             </example>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.GetCustomActionAttributeConfiguredValue(System.String,System.String@)">
+            <summary>
+            Returns the value of an existing CustomActionAttribute (synchronously) which will be used, when the next flash sequence is started.
+            </summary>
+            <param name="attributeName">Name of CustomActionAttribute. It has to exist in the vFlash project.</param>
+            <param name="attributeValue">The returned string representation of the value of the CustomActionAttribute (used when the flash sequence is started)</param>
+            <returns>VFlashResult: Success, InvalidCommandOrder, AttributeConversionFailed, AttributeNotFound.</returns>
+            
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Method is synchronous.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+              </list>
+            </remarks>
+            
+            <example>
+            <code>
+            //Example retrieving a value: 
+            string value;
+            VFlashResult result = flashApi.GetCustomActionAttributeConfiguredValue("CustomActionAttributeTypeString", out value);
+            if (result == VFlashResult.Success)
+              {
+            </code>
+            </example>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.GetCustomActionAttributeLastRunValue(System.String,System.String@)">
+            <summary>
+            Returns the value of an existing CustomActionAttribute (synchronously) valid after the last flash sequence.	
+            </summary>
+            <param name="attributeName">Name of CustomActionAttribute. It has to exist in the vFlash project.</param>
+            <param name="attributeValue">The returned string representation of the value of the CustomActionAttribute (used when the flash sequence is started)</param>
+            <returns>VFlashResult: Success, InvalidCommandOrder, AttributeConversionFailed, AttributeNotFound.</returns>
+            
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Can only be executed after at least one flashing sequence has been completed.</description>
+                </item>
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Method is synchronous.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+              </list>
+            </remarks>
+            
+            <example>
+            <code>
+            //Example retrieving a value: 
+            string value;
+            VFlashResult result = flashApi.GetCustomActionAttributeLastRunValue("CustomActionAttributeTypeString", out value);
+            if (result == VFlashResult.Success)
+              {
+            </code>
+            </example>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.GetFlashAttributeConfiguredValue(System.String,System.String@)">
+            <summary>
+            Returns the value of an existing FlashAttribute (synchronously) which will be used, when the next flash sequence is started.
+            </summary>
+            <param name="attributeName">Name of FlashAttribute. It has to exist in the vFlash project.</param>
+            <param name="attributeValue">The returned string representation of the value of the FlashAttribute (used when the flash sequence is started)</param>
+            <returns>VFlashResult: Success, InvalidCommandOrder, AttributeConversionFailed, AttributeNotFound.</returns>
+            
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Method is synchronous.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+              </list>
+            </remarks>
+            
+            <example>
+            <code>
+            //Example retrieving a value: 
+            string value;
+            VFlashResult result = flashApi.GetFlashAttributeConfiguredValue("CustomActionAttributeTypeString", out value);
+            if (result == VFlashResult.Success)
+              {
+            </code>
+            </example>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.GetFlashAttributeLastRunValue(System.String,System.String@)">
+            <summary>
+            Returns the value of an existing FlashAttribute (synchronously) valid after the last flash sequence.	
+            </summary>
+            <param name="attributeName">Name of FlashAttribute. It has to exist in the vFlash project.</param>
+            <param name="attributeValue">The returned string representation of the value of the FlashAttribute (used when the flash sequence is started)</param>
+            <returns>VFlashResult: Success, InvalidCommandOrder, AttributeConversionFailed, AttributeNotFound.</returns>
+            
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Can only be executed after at least one flashing sequence has been completed.</description>
+                </item>
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Method is synchronous.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+              </list>
+            </remarks>
+            
+            <example>
+            <code>
+            //Example retrieving a value: 
+            string value;
+            VFlashResult result = flashApi.GetFlashAttributeLastRunValue("CustomActionAttributeTypeString", out value);
+            if (result == VFlashResult.Success)
+              {
+            </code>
+            </example>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.UpdateComParam(System.String,System.String)">
+             <summary>
+             Change the value of a communication parameter. Only possible before the network is activated.
+             The conversion from the string into the communication parameter's type has to be possible.
+             </summary>
+             
+             <param name="parameterQualifier">Qualifier of the communication parameter</param>    
+             <param name="parameterValue">
+             Value of the communication parameter needs to be convertible into the parameter type.<br/>
+             Available parameter Types: String, UInt32.<br/>
+             Format for String: "Value of attribute".<br/>
+             Format for UInt32: "123".<br/>
+             </param>    
+             <returns>
+             VFlashResult: Success, AttributeNotFound, AttributeConversionFailed
+             </returns>
+             
+             <remarks>
+               <list type="bullet">
+                 <item>
+                   <description>Method is not thread-safe.</description>
+                 </item>
+                 <item>
+                   <description>Method is synchronous.</description>
+                 </item>
+               </list>
+            
+               <para><b>Supported parameters</b></para>
+               <list type="table">
+                 <listheader>
+                   <term>Bus Type</term>
+                   <term>Parameter Qualifier</term>
+                   <term>Type</term>
+                   <description>Description</description>
+                 </listheader>
+                 <item>
+                   <term>CAN</term>
+                   <term>RequestCANIdPhys</term>
+                   <term>uint</term>
+                   <description>Physical request CAN ID(Normal addressing and Extended Addressing)</description>
+                 </item>
+                 <item>
+                   <term>CAN</term>
+                   <term>ResponseCANId</term>
+                   <term>uint</term>
+                   <description>Response CAN ID(Normal addressing and Extended Addressing)</description>
+                 </item>
+                 <item>
+                   <term>CAN</term>
+                   <term>RequestCANIdFunc</term>
+                   <term>uint</term>
+                   <description>Functional request CAN(Normal and Extended Addressing)</description>
+                 </item>
+                 <item>
+                   <term>CAN, FlexRay</term>
+                   <term>EcuAddress</term>
+                   <term>uint</term>
+                   <description>ECU address(Extended / NormalFixed addressing)</description>
+                 </item>
+                 <item>
+                   <term>CAN, FlexRay</term>
+                   <term>TesterAddress</term>
+                   <term>uint</term>
+                   <description>Tester address(Extended / NormalFixed addressing)</description>
+                 </item>
+                 <item>
+                   <term>CAN</term>
+                   <term>AddressExtension</term>
+                   <term>uint</term>
+                   <description>Mixed addressing, 1 byte address extension</description>
+                 </item>
+                 <item>
+                   <term>DoIP</term>
+                   <term>LogicalSourceAddress</term>
+                   <term>uint</term>
+                   <description>2 byte logical address</description>
+                 </item>
+                 <item>
+                   <term>DoIP</term>
+                   <term>LogicalTargetAddress</term>
+                   <term>uint</term>
+                   <description>2 byte logical address</description>
+                 </item>
+                 <item>
+                   <term>DoIP</term>
+                   <term>VehicleAddress</term>
+                   <term>string</term>
+                   <description>IP address, e.g. "169.178.1.11" or "2001::1234"</description>
+                 </item>
+               </list>
+               <sub>uint: unsigned integer value, either in decimal "123" or hexadecimal "0x9AB" form.</sub>
+             </remarks>
+             
+              <example>
+             <code>
+             //Example for setting a parameter of type String:
+             VFlashResult result = flashApi.UpdateComParam("VehicleAddress", "2001::1234");
+            
+             //Example for setting a parameter of type 'hex' as string: 
+             VFlashResult result = flashApi.UpdateComParam("RequestCANIdPhys", "0x789");
+             </code>
+             </example>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.ActivateReporting(System.String,Vector.vFlash.Automation.vFlash.VFlashReportOptions)">
+            <summary>
+            Synchronously activates the reporting with specific settings.
+            Reporting remains active until explicitly deactivate or project is unloaded.
+            ActivateReporting is always evaluated as first step when flashing is started 
+            (and not in between!). Calling "ActivateReporting" several times updates the   
+            path and config flags, until the first write access on the report file.
+            </summary>
+            <param name="reportPath">Report path (target directory must exists).</param>
+            <param name="options">Bitmask to configure the reporting.</param>
+            <returns>VFlashResult: Error or success information.</returns>
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+              </list>
+            </remarks>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.DeactivateReporting">
+            <summary>
+            Deactivates reporting. The command is evaluated when the next flash process 
+            starts.
+            Hint: Reporting is automatically deactivated when the project is unloaded or 
+            vFlashAutomation is deinitialized.
+            </summary>
+            <returns>VFlashStationResult: Error or success information</returns>
+        </member>
+        <member name="M:Vector.vFlash.Automation.VFlashAPI.GetLastErrorMessage">
+            <summary>
+            Returns a detailed error text of the last error occurred.
+            </summary>
+            <returns>Detailed error text of the last error occurred.</returns>
+            <remarks>
+              <list type="bullet">
+                <item>
+                  <description>Method is not thread-safe.</description>
+                </item>
+                <item>
+                  <description>Requires at least Microsoft® .NET Framework SDK Version 4.</description>
+                </item>
+              </list>
+            </remarks>
+        </member>
+        <member name="T:Vector.vFlash.Automation.VFlashResult">
+            <summary>
+            vFlash API Result.
+            </summary>
+        </member>
+        <member name="T:Vector.vFlash.Automation.VFlashStatus">
+            <summary>
+            Status information.
+            </summary>
+        </member>
+        <member name="F:Vector.vFlash.Automation.VFlashStatus.Success">
+            <summary>
+            Reprogramming was successful or was skipped on purpose.
+            </summary>
+        </member>
+    </members>
+</doc>

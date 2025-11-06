@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Version="5">
+  <RuntimeGroup Active="True" Name="Static Mapping">
+    <LogicalGroup Active="True" Name="SILmapping" IsCustomBinding="True">
+      <MappingRelation Active="True" DirectionVar1ToVar2="True" Offset="0" Factor="1" Assignment="OnChange" CyclicTimerValue="10">
+        <ValueObject1 ItemType="symSignal">
+          <BusType>1</BusType>
+          <DatabaseName>CAN</DatabaseName>
+          <Description />
+          <EnvVarName>CAN00</EnvVarName>
+          <FullName>CAN::BFC::LightCtrl::HeadLight</FullName>
+          <ID>0</ID>
+          <MessageName>LightCtrl</MessageName>
+          <Name>HeadLight</Name>
+          <NeedsMessage>False</NeedsMessage>
+          <NetworkName>CAN00</NetworkName>
+          <NodeName>BFC</NodeName>
+          <SignalName>HeadLight</SignalName>
+          <VariableType>0</VariableType>
+        </ValueObject1>
+        <ValueObject2 ItemType="symFunctionBusDOMember">
+          <BusType>-1</BusType>
+          <DatabaseName>ApplicationObjects::Mapping.HeadLightLamp</DatabaseName>
+          <Description />
+          <EnvVarName />
+          <FullName>ApplicationObjects::Mapping.HeadLightLamp</FullName>
+          <ID>1</ID>
+          <MessageName />
+          <Name>ApplicationObjects::Mapping.HeadLightLamp</Name>
+          <NeedsMessage>False</NeedsMessage>
+          <NetworkName />
+          <NodeName />
+          <SignalName />
+          <VariableType>0</VariableType>
+          <FBDOVEType>1</FBDOVEType>
+        </ValueObject2>
+      </MappingRelation>
+      <MappingRelation Active="True" DirectionVar1ToVar2="True" Offset="0" Factor="1" Assignment="OnChange" CyclicTimerValue="10">
+        <ValueObject1 ItemType="symFunctionBusDOMember">
+          <BusType>-1</BusType>
+          <DatabaseName>ApplicationObjects::Mapping.SwitchState</DatabaseName>
+          <Description />
+          <EnvVarName />
+          <FullName>ApplicationObjects::Mapping.SwitchState</FullName>
+          <ID>1</ID>
+          <MessageName />
+          <Name>ApplicationObjects::Mapping.SwitchState</Name>
+          <NeedsMessage>False</NeedsMessage>
+          <NetworkName />
+          <NodeName />
+          <SignalName />
+          <VariableType>0</VariableType>
+          <FBDOVEType>1</FBDOVEType>
+        </ValueObject1>
+        <ValueObject2 ItemType="symSignal">
+          <BusType>1</BusType>
+          <DatabaseName>CAN</DatabaseName>
+          <Description />
+          <EnvVarName>CAN00</EnvVarName>
+          <FullName>CAN::LSW::LightSwitch::LightSwitch</FullName>
+          <ID>0</ID>
+          <MessageName>LightSwitch</MessageName>
+          <Name>LightSwitch</Name>
+          <NeedsMessage>False</NeedsMessage>
+          <NetworkName>CAN00</NetworkName>
+          <NodeName>LSW</NodeName>
+          <SignalName>LightSwitch</SignalName>
+          <VariableType>0</VariableType>
+        </ValueObject2>
+      </MappingRelation>
+    </LogicalGroup>
+  </RuntimeGroup>
+</Mapping>

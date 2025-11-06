@@ -1,0 +1,87 @@
+
+version: 3.2.0
+
+scenarios:
+  - name: L1_vECU
+    variables:
+    - name: time_source
+      value: internal-scaled
+    - name: default_network_mapping  
+      value: internal-simulator     
+  - name: L3_vECU
+    variables:
+    - name: time_source
+      value: internal-scaled
+    - name: default_network_mapping  
+      value: internal-simulator
+  - name: HIL
+    variables:
+    - name: time_source
+      value: external-hardware
+    - name: default_network_mapping
+      value: external-hardware  
+
+global-settings:
+  working-mode:
+    time-source: ${time_source}
+    default-network-mapping: ${default_network_mapping}
+vt-system:
+  file-path: ./venvironment-export-artifacts/vts-config/vts.vtcfg
+  module-description-folder: ./venvironment-export-artifacts/vts-module-descriptions
+  when: SCENARIO_NAME == "HIL"
+
+symbol-mappings:
+  - file-path: ./SymbolMapping/L1mapping.vmap
+    when: SCENARIO_NAME == "L1_vECU"
+  - file-path: ./SymbolMapping/L3mapping.vmap
+    when: SCENARIO_NAME == "L3_vECU"
+  - file-path: ./SymbolMapping/HILmapping.vmap
+    when: SCENARIO_NAME == "HIL"
+  - file-path: ./SymbolMapping/VTmapping.vmap 
+    when: SCENARIO_NAME == "HIL"
+
+datasources:
+  - file-path: ./DataSources/Testabstraction.vcdl
+  - file-path: ./../ECU/Level1SUT/BFC.vCDL
+    when: SCENARIO_NAME == "L1_vECU"
+
+databases:
+  - name: CAN
+    file-path: ./../ECU/BFC/Config/System/CAN.dbc
+    when: SCENARIO_NAME == "L3_vECU" || SCENARIO_NAME == "HIL"
+
+can-networks:
+  - name: CAN00
+    database: CAN
+    when: SCENARIO_NAME == "L3_vECU" || SCENARIO_NAME == "HIL"
+
+application-models:
+  - file-path: ./../ECU/Level1SUT/BFC.vmodule
+    when: SCENARIO_NAME == "L1_vECU"
+  - file-path: ./SymbolMapping/L1mapping.can
+    when: SCENARIO_NAME == "L1_vECU"
+  - file-path: ./SymbolMapping/L3mapping.can
+    when: SCENARIO_NAME == "L3_vECU"
+  - file-path: ./SymbolMapping/HILMapping.can
+    when: SCENARIO_NAME == "HIL"
+
+simulation-nodes:
+  - name: LSW
+    when: SCENARIO_NAME == "L3_vECU" || SCENARIO_NAME == "HIL"
+    network-assignments:
+      - network: CAN00
+    modeling-libraries:
+      - CANoeILNLVector.vmodule
+  - name: BFC
+    when: SCENARIO_NAME == "L3_vECU"
+    file-path: nodes/bfc_capl.can
+    network-assignments:
+      - network: CAN00
+    modeling-libraries:
+      - ./../ECU/Level3SUT/BFC.vmodule
+  - name: HLC
+    when: SCENARIO_NAME == "L3_vECU" || SCENARIO_NAME == "HIL"
+    network-assignments:
+      - network: CAN00
+    modeling-libraries:
+      - CANoeILNLVector.vmodule

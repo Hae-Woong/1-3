@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <ELEMENTS>
+        <BSW-IMPLEMENTATION UUID="0073b776-5c6b-434f-949f-834622fb17b0">
+          <SHORT-NAME>Dem_Impl</SHORT-NAME>
+          <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+          <RESOURCE-CONSUMPTION UUID="7fcc500c-3032-47db-af94-5cf2ff9db215">
+            <SHORT-NAME>ResourceConsumption</SHORT-NAME>
+            <MEMORY-SECTIONS>
+              <MEMORY-SECTION UUID="f39f5ebf-805b-4817-9d36-3ab5e29a65fd">
+                <SHORT-NAME>CODE</SHORT-NAME>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="c3d9a0c8-1d36-40ca-ac20-b6eed1c6a409">
+                <SHORT-NAME>CONST_16</SHORT-NAME>
+                <ALIGNMENT>16</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/CONST</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="97657a26-834e-4181-ad86-3f495eb45b62">
+                <SHORT-NAME>CONST_32</SHORT-NAME>
+                <ALIGNMENT>32</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/CONST</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="d78f27c5-5e70-449f-a37c-f1a41de14e62">
+                <SHORT-NAME>CONST_64</SHORT-NAME>
+                <ALIGNMENT>64</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/CONST</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="dd70a41e-8d03-4d7b-a09e-4604a449e686">
+                <SHORT-NAME>CONST_8</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/CONST</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="b0c0a0fd-17f8-4d09-8055-2f9610f580cb">
+                <SHORT-NAME>CONST_BOOLEAN</SHORT-NAME>
+                <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/CONST</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="5978eb61-7002-4334-8fd0-c897fee3a03c">
+                <SHORT-NAME>CONST_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/CONST</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="b090febd-2589-46cf-a6f1-95285a30e91e">
+                <SHORT-NAME>DEM_INVALID_OSAPPLICATION_VAR_CLEARED_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+                <SYMBOL>INVALID_OSAPPLICATION_VAR_CLEARED_UNSPECIFIED</SYMBOL>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="589ec2b6-4506-4bed-b99b-637a1ec8bbee">
+                <SHORT-NAME>VAR_CLEARED_16</SHORT-NAME>
+                <ALIGNMENT>16</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="24492d66-461a-4751-ac63-a37c1ab19365">
+                <SHORT-NAME>VAR_CLEARED_32</SHORT-NAME>
+                <ALIGNMENT>32</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="50b074cd-5963-451c-9b74-c462cb15bba7">
+                <SHORT-NAME>VAR_CLEARED_64</SHORT-NAME>
+                <ALIGNMENT>64</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="7e4a2249-2ca7-4e8b-83dd-ae67ac935e57">
+                <SHORT-NAME>VAR_CLEARED_8</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="91ab0d00-f75e-4c9a-b425-cac0f50fe61f">
+                <SHORT-NAME>VAR_CLEARED_BOOLEAN</SHORT-NAME>
+                <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="29c13587-8fd2-4fc4-9641-94ebf33e7b81">
+                <SHORT-NAME>VAR_CLEARED_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="681f7546-4ad6-4f37-be9a-b6433409afd3">
+                <SHORT-NAME>VAR_FAST_CLEARED_16</SHORT-NAME>
+                <ALIGNMENT>16</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="f814c448-9a0b-4416-8596-b568911852ce">
+                <SHORT-NAME>VAR_FAST_CLEARED_32</SHORT-NAME>
+                <ALIGNMENT>32</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="a46fedba-c8cd-47e6-93d0-3e0910ae711b">
+                <SHORT-NAME>VAR_FAST_CLEARED_64</SHORT-NAME>
+                <ALIGNMENT>64</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="85641b08-ad2a-4267-a311-d5ef2698f876">
+                <SHORT-NAME>VAR_FAST_CLEARED_8</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="055a3322-5d5a-4f89-a113-ca9cd49c4c1c">
+                <SHORT-NAME>VAR_FAST_CLEARED_BOOLEAN</SHORT-NAME>
+                <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="08c479c6-b571-4833-8bad-f1e6d00f56b5">
+                <SHORT-NAME>VAR_FAST_CLEARED_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="149dce32-3c0f-4dd1-8995-0a226e44c2be">
+                <SHORT-NAME>VAR_FAST_INIT_16</SHORT-NAME>
+                <ALIGNMENT>16</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="04c280b5-f833-428d-af0c-0aecf730b2a0">
+                <SHORT-NAME>VAR_FAST_INIT_32</SHORT-NAME>
+                <ALIGNMENT>32</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="db8f36cc-d62c-4011-ac23-3287087fd8a1">
+                <SHORT-NAME>VAR_FAST_INIT_64</SHORT-NAME>
+                <ALIGNMENT>64</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="09640fb7-af81-42f4-8037-d379d7062345">
+                <SHORT-NAME>VAR_FAST_INIT_8</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="730277d7-b43c-476d-87ca-56c448fc815c">
+                <SHORT-NAME>VAR_FAST_INIT_BOOLEAN</SHORT-NAME>
+                <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="df8742e2-77e1-401d-90f9-6f18db92c202">
+                <SHORT-NAME>VAR_FAST_INIT_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="4bb25127-bcbb-44fb-b693-a354172be471">
+                <SHORT-NAME>VAR_FAST_NO_INIT_16</SHORT-NAME>
+                <ALIGNMENT>16</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="ba886578-88f3-4cb5-a25a-e0c3e4e32bb3">
+                <SHORT-NAME>VAR_FAST_NO_INIT_32</SHORT-NAME>
+                <ALIGNMENT>32</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="4fd27a6f-5f2c-40b1-bbdb-4f7eefff3065">
+                <SHORT-NAME>VAR_FAST_NO_INIT_64</SHORT-NAME>
+                <ALIGNMENT>64</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="84e94f87-af2e-4f6f-95e9-2d7d96ceb557">
+                <SHORT-NAME>VAR_FAST_NO_INIT_8</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="ff63a469-87f0-47c6-81e5-3bc85c1a5fc0">
+                <SHORT-NAME>VAR_FAST_NO_INIT_BOOLEAN</SHORT-NAME>
+                <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="d114fc4e-6c4c-496d-9c73-564486ac791c">
+                <SHORT-NAME>VAR_FAST_NO_INIT_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_FAST_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="7852706f-8c0c-4893-8a36-f87cb930f444">
+                <SHORT-NAME>VAR_INIT_16</SHORT-NAME>
+                <ALIGNMENT>16</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="ccd4c72f-253b-4744-87d4-e9527f8aa5ee">
+                <SHORT-NAME>VAR_INIT_32</SHORT-NAME>
+                <ALIGNMENT>32</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="cd80b58a-5925-4c79-aeef-6d54082111b3">
+                <SHORT-NAME>VAR_INIT_64</SHORT-NAME>
+                <ALIGNMENT>64</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="dbd43c7a-1296-4a1a-b2d0-1940ac578440">
+                <SHORT-NAME>VAR_INIT_8</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="70cb748b-2926-4685-93fd-9a05eac010f1">
+                <SHORT-NAME>VAR_INIT_8_RESTRICTED</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="9e611aa4-6459-4a34-abd3-f07bf2970995">
+                <SHORT-NAME>VAR_INIT_BOOLEAN</SHORT-NAME>
+                <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="7a94832d-66bb-49c1-9c72-cbed8b73d313">
+                <SHORT-NAME>VAR_INIT_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="2c41cf77-268c-496c-93c4-192f8d3e0fa9">
+                <SHORT-NAME>VAR_NOCACHE_CLEARED_16</SHORT-NAME>
+                <ALIGNMENT>16</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="95684d59-4334-4b2b-be62-04be1869f7d7">
+                <SHORT-NAME>VAR_NOCACHE_CLEARED_32</SHORT-NAME>
+                <ALIGNMENT>32</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="57bcad76-fc62-4c89-b522-6b3c0c26803f">
+                <SHORT-NAME>VAR_NOCACHE_CLEARED_64</SHORT-NAME>
+                <ALIGNMENT>64</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="f449f5a2-6591-44eb-a5af-201af47e3833">
+                <SHORT-NAME>VAR_NOCACHE_CLEARED_8</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="2722905a-791b-4478-a3b8-110f72fc3ae0">
+                <SHORT-NAME>VAR_NOCACHE_CLEARED_BOOLEAN</SHORT-NAME>
+                <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="bd980960-e209-4d14-bc19-7542556fbf7e">
+                <SHORT-NAME>VAR_NOCACHE_CLEARED_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_CLEARED</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="a4a98981-42cf-4927-8d25-008f7b1967e2">
+                <SHORT-NAME>VAR_NOCACHE_INIT_16</SHORT-NAME>
+                <ALIGNMENT>16</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="c47ffb2c-455f-4c33-aee6-61a94fa9ce2b">
+                <SHORT-NAME>VAR_NOCACHE_INIT_32</SHORT-NAME>
+                <ALIGNMENT>32</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="7b42a51f-28d8-42dd-b97c-4af1c3161b3f">
+                <SHORT-NAME>VAR_NOCACHE_INIT_64</SHORT-NAME>
+                <ALIGNMENT>64</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="f2f21196-58d8-4c2a-b8d8-bc32da6116ed">
+                <SHORT-NAME>VAR_NOCACHE_INIT_8</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="e9f50faf-5cdd-48c0-8b9e-b031dc511b1f">
+                <SHORT-NAME>VAR_NOCACHE_INIT_BOOLEAN</SHORT-NAME>
+                <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="c1f74855-094e-4600-bb2b-a32196374578">
+                <SHORT-NAME>VAR_NOCACHE_INIT_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="005c2212-2a0e-4602-89c9-1b1e790a7dbf">
+                <SHORT-NAME>VAR_NOCACHE_NO_INIT_16</SHORT-NAME>
+                <ALIGNMENT>16</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="ad45e131-81b2-472a-8442-8f86c9a7c0cc">
+                <SHORT-NAME>VAR_NOCACHE_NO_INIT_32</SHORT-NAME>
+                <ALIGNMENT>32</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="08e2d984-a756-4edb-b630-71a51b6b22eb">
+                <SHORT-NAME>VAR_NOCACHE_NO_INIT_64</SHORT-NAME>
+                <ALIGNMENT>64</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="ae40c847-c1e5-437f-aa8b-597c59d3a7e8">
+                <SHORT-NAME>VAR_NOCACHE_NO_INIT_8</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="bc5a41fb-8c9e-41cd-98c1-8d04a5657d67">
+                <SHORT-NAME>VAR_NOCACHE_NO_INIT_BOOLEAN</SHORT-NAME>
+                <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="bd99d93b-aceb-4d54-9e4c-8a4e4b094fb1">
+                <SHORT-NAME>VAR_NOCACHE_NO_INIT_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NOCACHE_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="9f267c0c-6951-4fb4-b2c5-33de3f1b96e3">
+                <SHORT-NAME>VAR_NOCACHE_SAVED_ZONE0_16</SHORT-NAME>
+                <ALIGNMENT>16</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_SAVED_ZONE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="03b45e9b-44c8-4ef9-a7d1-1bc0598da91a">
+                <SHORT-NAME>VAR_NOCACHE_SAVED_ZONE0_32</SHORT-NAME>
+                <ALIGNMENT>32</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_SAVED_ZONE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="f63219ff-3bb9-4258-8ad6-108175b0b5d9">
+                <SHORT-NAME>VAR_NOCACHE_SAVED_ZONE0_64</SHORT-NAME>
+                <ALIGNMENT>64</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_SAVED_ZONE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="6db06a92-3b69-4fa7-8297-ea1d567e8be6">
+                <SHORT-NAME>VAR_NOCACHE_SAVED_ZONE0_8</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_SAVED_ZONE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="3c0f8fa1-169f-4fa2-8b56-f2d6597620cf">
+                <SHORT-NAME>VAR_NOCACHE_SAVED_ZONE0_BOOLEAN</SHORT-NAME>
+                <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_SAVED_ZONE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="bc4545b5-dbd5-41cd-9f9a-15e1d5595ee4">
+                <SHORT-NAME>VAR_NOCACHE_SAVED_ZONE0_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_SAVED_ZONE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="929e6f5d-2ef8-4444-897b-cab2ced8b36d">
+                <SHORT-NAME>VAR_NO_INIT_16</SHORT-NAME>
+                <ALIGNMENT>16</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="33e7a3af-a49e-4a1d-b986-d14a41ee11a0">
+                <SHORT-NAME>VAR_NO_INIT_32</SHORT-NAME>
+                <ALIGNMENT>32</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="6a55e1a3-2dc2-4c03-a420-3a5d02ea8096">
+                <SHORT-NAME>VAR_NO_INIT_64</SHORT-NAME>
+                <ALIGNMENT>64</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="f3e07762-aee7-43f9-b3e5-a474ff4d3351">
+                <SHORT-NAME>VAR_NO_INIT_8</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="939e5ee2-0da9-4edf-9f43-cc2316445ee8">
+                <SHORT-NAME>VAR_NO_INIT_BOOLEAN</SHORT-NAME>
+                <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="9a0927d7-677d-4f07-ac1e-58074f235d69">
+                <SHORT-NAME>VAR_NO_INIT_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="2b453f3e-e320-45b4-90d2-303c91b1d3a0">
+                <SHORT-NAME>VAR_NO_INIT_UNSPECIFIED_RESTRICTED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_NO_INIT</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="8a2b9605-bf06-4adc-9f2d-c660869cee59">
+                <SHORT-NAME>VAR_SAVED_ZONE0_16</SHORT-NAME>
+                <ALIGNMENT>16</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_SAVED_ZONE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="6ed1a356-67bc-43e9-9453-2ac73622d38e">
+                <SHORT-NAME>VAR_SAVED_ZONE0_32</SHORT-NAME>
+                <ALIGNMENT>32</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_SAVED_ZONE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="ba2c44bc-9952-4d74-96fe-6c8b62d91ac4">
+                <SHORT-NAME>VAR_SAVED_ZONE0_64</SHORT-NAME>
+                <ALIGNMENT>64</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_SAVED_ZONE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="5594ad2e-49ca-42ad-8543-7208380be925">
+                <SHORT-NAME>VAR_SAVED_ZONE0_8</SHORT-NAME>
+                <ALIGNMENT>8</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_SAVED_ZONE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="ce4af907-41e8-4307-bb35-f23b3a9ca22c">
+                <SHORT-NAME>VAR_SAVED_ZONE0_BOOLEAN</SHORT-NAME>
+                <ALIGNMENT>BOOLEAN</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_SAVED_ZONE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+              <MEMORY-SECTION UUID="38849ade-91cd-4917-907d-0203d3775351">
+                <SHORT-NAME>VAR_SAVED_ZONE0_UNSPECIFIED</SHORT-NAME>
+                <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/MICROSAR_MemMap/SwAddrMethods/VAR_SAVED_ZONE</SW-ADDRMETHOD-REF>
+              </MEMORY-SECTION>
+            </MEMORY-SECTIONS>
+          </RESOURCE-CONSUMPTION>
+          <SW-VERSION>27.00.00</SW-VERSION>
+          <USED-CODE-GENERATOR>DaVinci Configurator</USED-CODE-GENERATOR>
+          <VENDOR-ID>30</VENDOR-ID>
+          <AR-RELEASE-VERSION>4.01.02</AR-RELEASE-VERSION>
+        </BSW-IMPLEMENTATION>
+      </ELEMENTS>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="b5b27510-8a05-4da3-a99f-d84ac2aa67c9">
+          <SHORT-NAME>Dem_ib_bswmd</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="cc19d36c-245e-4fc2-a1a8-2c875692dbb4">
+              <SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
+              <ELEMENTS>
+                <BSW-MODULE-DESCRIPTION UUID="42e12850-9a23-411f-9df4-626cabbd9448">
+                  <SHORT-NAME>Dem</SHORT-NAME>
+                  <PROVIDED-ENTRYS>
+                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                      <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem_MasterMainFunction</BSW-MODULE-ENTRY-REF>
+                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                      <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem_SatelliteMainFunction</BSW-MODULE-ENTRY-REF>
+                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                  </PROVIDED-ENTRYS>
+                  <INTERNAL-BEHAVIORS>
+                    <BSW-INTERNAL-BEHAVIOR UUID="3f4be0cd-0d1c-4f0e-bb4d-42d547415782">
+                      <SHORT-NAME>DemBehavior</SHORT-NAME>
+                      <EXCLUSIVE-AREAS>
+                        <EXCLUSIVE-AREA UUID="c2d4a533-6725-42df-b470-1d60e14e6093">
+                          <SHORT-NAME>DEM_EXCLUSIVE_AREA_0</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">(DiagMonitor) Ensures consistency and atomicity of event reports</L-2>
+                          </DESC>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="1d004db9-c2b5-4183-b4ef-63de52ddfd11">
+                          <SHORT-NAME>DEM_EXCLUSIVE_AREA_1</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">(StateManager) Ensures consistent status updates when receiving ECU states managed outside the Dem</L-2>
+                          </DESC>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="3d8c54ff-b411-4cd3-8e32-258d4188ff5e">
+                          <SHORT-NAME>DEM_EXCLUSIVE_AREA_2</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">(DcmAPI) Ensures consistent status updates when receiving ECU states managed outside the Dem</L-2>
+                          </DESC>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="f0823703-734b-4070-82f5-fb7c20144aa3">
+                          <SHORT-NAME>DEM_EXCLUSIVE_AREA_3</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">(CrossCoreComm) Ensures consistent prestorage when called from multiple clients. Ensures data consistency between satellites and master if the platform does not provide a specific compareAndSwap instruction</L-2>
+                          </DESC>
+                        </EXCLUSIVE-AREA>
+                        <EXCLUSIVE-AREA UUID="ddc15c4e-bdef-4f4f-8659-79547e81a7be">
+                          <SHORT-NAME>DEM_EXCLUSIVE_AREA_4</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="FOR-ALL">(NonAtomic32bit) Ensures consistency if the platform does not provide an atomic 32bit access</L-2>
+                          </DESC>
+                        </EXCLUSIVE-AREA>
+                      </EXCLUSIVE-AREAS>
+                      <ENTITYS>
+                        <BSW-SCHEDULABLE-ENTITY UUID="42572ed1-d5ea-49a6-b2e7-c2a496257bba">
+                          <SHORT-NAME>Dem_MasterMainFunction</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem/DemBehavior/DEM_EXCLUSIVE_AREA_0</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem/DemBehavior/DEM_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem/DemBehavior/DEM_EXCLUSIVE_AREA_2</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem/DemBehavior/DEM_EXCLUSIVE_AREA_3</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem/DemBehavior/DEM_EXCLUSIVE_AREA_4</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem_MasterMainFunction</IMPLEMENTED-ENTRY-REF>
+                        </BSW-SCHEDULABLE-ENTITY>
+                        <BSW-SCHEDULABLE-ENTITY UUID="0b085c5e-e34d-4ce1-a901-8ecb48f0d977">
+                          <SHORT-NAME>Dem_SatelliteMainFunction</SHORT-NAME>
+                          <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem/DemBehavior/DEM_EXCLUSIVE_AREA_0</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem/DemBehavior/DEM_EXCLUSIVE_AREA_1</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem/DemBehavior/DEM_EXCLUSIVE_AREA_2</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem/DemBehavior/DEM_EXCLUSIVE_AREA_3</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                            <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem/DemBehavior/DEM_EXCLUSIVE_AREA_4</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                          </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                          <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem_SatelliteMainFunction</IMPLEMENTED-ENTRY-REF>
+                        </BSW-SCHEDULABLE-ENTITY>
+                      </ENTITYS>
+                      <EVENTS>
+                        <BSW-TIMING-EVENT UUID="b0576fc6-0750-4996-809d-554319b76f23">
+                          <SHORT-NAME>Dem_MasterMainFunctionTimingEvent0</SHORT-NAME>
+                          <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem/DemBehavior/Dem_MasterMainFunction</STARTS-ON-EVENT-REF>
+                          <PERIOD>0.01</PERIOD>
+                        </BSW-TIMING-EVENT>
+                        <BSW-TIMING-EVENT UUID="14aa9589-e5fb-4298-8b7d-c7e466ba4acf">
+                          <SHORT-NAME>Dem_SatelliteMainFunctionTimingEvent0</SHORT-NAME>
+                          <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/MICROSAR/Dem_ib_bswmd/BswModuleDescriptions/Dem/DemBehavior/Dem_SatelliteMainFunction</STARTS-ON-EVENT-REF>
+                          <PERIOD>0.01</PERIOD>
+                        </BSW-TIMING-EVENT>
+                      </EVENTS>
+                    </BSW-INTERNAL-BEHAVIOR>
+                  </INTERNAL-BEHAVIORS>
+                </BSW-MODULE-DESCRIPTION>
+                <BSW-MODULE-ENTRY UUID="9fe5558e-f404-4b4d-81b1-187bf3543367">
+                  <SHORT-NAME>Dem_MasterMainFunction</SHORT-NAME>
+                  <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+                <BSW-MODULE-ENTRY UUID="74e0c7cf-cd6f-41b9-960e-52b091dcecb4">
+                  <SHORT-NAME>Dem_SatelliteMainFunction</SHORT-NAME>
+                  <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                  <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                </BSW-MODULE-ENTRY>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

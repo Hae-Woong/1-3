@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00049.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+      <SHORT-NAME>MICROSAR</SHORT-NAME>
+      <ELEMENTS>
+        <BSW-IMPLEMENTATION UUID="353aeec3-1f5b-40ae-b3c2-72e88d6b5e1a">
+          <SHORT-NAME>Fee_Impl</SHORT-NAME>
+          <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+          <SW-VERSION>10.00.04</SW-VERSION>
+          <USED-CODE-GENERATOR>DaVinci Configurator</USED-CODE-GENERATOR>
+          <VENDOR-ID>30</VENDOR-ID>
+          <AR-RELEASE-VERSION>4.00.03</AR-RELEASE-VERSION>
+        </BSW-IMPLEMENTATION>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE UUID="33022ff3-f082-4548-ab3c-90793765f2d3">
+      <SHORT-NAME>AURIX2G</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE UUID="7e118c10-0a18-49f2-9978-33759fe5e7c2">
+          <SHORT-NAME>EcucDefs</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE UUID="6cde4cf3-a29e-4676-90e7-71388eb7bd2e">
+              <SHORT-NAME>Fee_ib_bswmd</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE UUID="f6f23b91-ae55-4658-b5e5-c4cab844d27a">
+                  <SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
+                  <ELEMENTS>
+                    <BSW-MODULE-DESCRIPTION UUID="fe9d57b4-14c9-4d46-b496-d5a3e72e8c5b">
+                      <SHORT-NAME>Fee</SHORT-NAME>
+                      <PROVIDED-ENTRYS>
+                        <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                          <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AURIX2G/EcucDefs/Fee_ib_bswmd/BswModuleDescriptions/Fee_MainFunction</BSW-MODULE-ENTRY-REF>
+                        </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                      </PROVIDED-ENTRYS>
+                      <INTERNAL-BEHAVIORS>
+                        <BSW-INTERNAL-BEHAVIOR UUID="67963a73-9f51-48f0-bd75-43ec033efaaa">
+                          <SHORT-NAME>FeeBehavior</SHORT-NAME>
+                          <ENTITYS>
+                            <BSW-SCHEDULABLE-ENTITY UUID="3c68fd41-261d-4222-939a-d99422afe1e9">
+                              <SHORT-NAME>Fee_MainFunction</SHORT-NAME>
+                              <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AURIX2G/EcucDefs/Fee_ib_bswmd/BswModuleDescriptions/Fee_MainFunction</IMPLEMENTED-ENTRY-REF>
+                            </BSW-SCHEDULABLE-ENTITY>
+                          </ENTITYS>
+                          <EVENTS>
+                            <BSW-TIMING-EVENT UUID="a3dfd7c9-fc71-4027-8016-39b8fbb9ffa9">
+                              <SHORT-NAME>Fee_MainFunctionTimingEvent0</SHORT-NAME>
+                              <STARTS-ON-EVENT-REF DEST="BSW-SCHEDULABLE-ENTITY">/AURIX2G/EcucDefs/Fee_ib_bswmd/BswModuleDescriptions/Fee/FeeBehavior/Fee_MainFunction</STARTS-ON-EVENT-REF>
+                              <PERIOD>0.01</PERIOD>
+                            </BSW-TIMING-EVENT>
+                          </EVENTS>
+                        </BSW-INTERNAL-BEHAVIOR>
+                      </INTERNAL-BEHAVIORS>
+                    </BSW-MODULE-DESCRIPTION>
+                    <BSW-MODULE-ENTRY UUID="b01b63e6-48a0-49cb-9f3f-8d42118ec016">
+                      <SHORT-NAME>Fee_MainFunction</SHORT-NAME>
+                      <CALL-TYPE>SCHEDULED</CALL-TYPE>
+                      <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                    </BSW-MODULE-ENTRY>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

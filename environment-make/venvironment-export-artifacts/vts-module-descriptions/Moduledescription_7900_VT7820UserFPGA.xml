@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modules version="2" >
+<module interface="0002" dpramStartAddress="1000" productCode="001EDC01" dpramLength="04B4" name="VT7820" MDID="A13159C3134BD7D4E7372E3AC9FF295700000000" >
+<channels>
+<channel name="Channel1" />
+<channel name="Channel2" />
+<channel name="Channel3" />
+<channel name="Channel4" />
+</channels>
+<values>
+<writeBlock len="0004" start="0040" sync="true" >
+<writeValue id="80000200" b="0040" name="Reserved1" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000300" b="0040:01" name="RelayADC" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000400" b="0040:02" name="RelayShort" channelNo="0002" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000500" b="0040:03" name="RelayBreak" channelNo="0002" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000600" b="0040:04" name="RelaySwitch" channelNo="0002" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000700" b="0040:05" name="RelaySwitch" channelNo="0001" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000800" b="0040:06" name="RelayBreak" channelNo="0001" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000900" b="0040:07" name="RelayShort" channelNo="0001" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000A00" b="0041" name="Reserved2" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000B00" b="0041:01" name="Reserved3" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000C00" b="0041:02" name="RelayShort" channelNo="0004" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000D00" b="0041:03" name="RelayBreak" channelNo="0004" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000E00" b="0041:04" name="RelaySwitch" channelNo="0004" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80000F00" b="0041:05" name="RelaySwitch" channelNo="0003" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80001000" b="0041:06" name="RelayBreak" channelNo="0003" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="80001100" b="0041:07" name="RelayShort" channelNo="0003" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+</writeBlock>
+<readBlock len="0028" start="0100" sync="true" >
+<readValue id="02000800" b="0100" >
+<dataType>
+<timestamp>
+</timestamp>
+</dataType>
+</readValue>
+<readValue id="02000000" b="0108" name="DownloadUpdateAck" channelNo="0001" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000100" b="010C" name="DownloadUpdateAck" channelNo="0002" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000200" b="0110" name="DownloadUpdateAck" channelNo="0003" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000300" b="0114" name="DownloadUpdateAck" channelNo="0004" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000400" b="0118" name="Status" channelNo="0001" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000500" b="011C" name="Status" channelNo="0002" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000600" b="0120" name="Status" channelNo="0003" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+<readValue id="02000700" b="0124" name="Status" channelNo="0004" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatOutput="false" >
+</integer>
+</dataType>
+</readValue>
+</readBlock>
+<writeBlock len="0114" start="0178" sync="true" >
+<writeValue id="82000000" b="0178" name="ActivateOutput" channelNo="0001" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000100" b="0178:01" name="ActivateOutput" channelNo="0002" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000200" b="0178:02" name="ActivateOutput" channelNo="0003" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000300" b="0178:03" name="ActivateOutput" channelNo="0004" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000400" b="0178:04" name="DownloadEdge" channelNo="0001" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000500" b="0178:05" name="DownloadEdge" channelNo="0002" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000600" b="0178:06" name="DownloadEdge" channelNo="0003" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000700" b="0178:07" name="DownloadEdge" channelNo="0004" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000800" b="0179" name="DownloadTrigger" channelNo="0001" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000900" b="0179:01" name="DownloadTrigger" channelNo="0002" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000A00" b="0179:02" name="DownloadTrigger" channelNo="0003" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000B00" b="0179:03" name="DownloadTrigger" channelNo="0004" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000C00" b="0179:04" name="OutputType" channelNo="0001" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000D00" b="0179:05" name="OutputType" channelNo="0002" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000E00" b="0179:06" name="OutputType" channelNo="0003" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82000F00" b="0179:07" name="OutputType" channelNo="0004" d="00" >
+<dataType>
+<integer bitLength="0001" unsigned="true" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001000" b="017C" name="DownloadAngle" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>0.000000000000e+00</min><max>3.599989929199e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001100" b="0180" name="DownloadAngle" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>0.000000000000e+00</min><max>3.599989929199e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001200" b="0184" name="DownloadAngle" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>0.000000000000e+00</min><max>3.599989929199e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001300" b="0188" name="DownloadAngle" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>0.000000000000e+00</min><max>3.599989929199e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001400" b="018C" name="DownloadUpdate" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001500" b="0190" name="DownloadUpdate" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001600" b="0194" name="DownloadUpdate" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001700" b="0198" name="DownloadUpdate" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001800" b="019C" name="HighCurrent" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>0.000000000000e+00</min><max>1.000000014901e-01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001900" b="01A0" name="HighCurrent" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>0.000000000000e+00</min><max>1.000000014901e-01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001A00" b="01A4" name="HighCurrent" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>0.000000000000e+00</min><max>1.000000014901e-01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001B00" b="01A8" name="HighCurrent" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>0.000000000000e+00</min><max>1.000000014901e-01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001C00" b="01AC" name="HighVoltage" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>-1.200000000000e+01</min><max>1.200000000000e+01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001D00" b="01B0" name="HighVoltage" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>-1.200000000000e+01</min><max>1.200000000000e+01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001E00" b="01B4" name="HighVoltage" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>-1.200000000000e+01</min><max>1.200000000000e+01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82001F00" b="01B8" name="HighVoltage" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>-1.200000000000e+01</min><max>1.200000000000e+01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002000" b="01BC" name="LowCurrent" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>0.000000000000e+00</min><max>1.000000014901e-01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002100" b="01C0" name="LowCurrent" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>0.000000000000e+00</min><max>1.000000014901e-01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002200" b="01C4" name="LowCurrent" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>0.000000000000e+00</min><max>1.000000014901e-01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002300" b="01C8" name="LowCurrent" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>0.000000000000e+00</min><max>1.000000014901e-01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002400" b="01CC" name="LowVoltage" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>-1.200000000000e+01</min><max>1.200000000000e+01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002500" b="01D0" name="LowVoltage" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>-1.200000000000e+01</min><max>1.200000000000e+01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002600" b="01D4" name="LowVoltage" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>-1.200000000000e+01</min><max>1.200000000000e+01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002700" b="01D8" name="LowVoltage" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>-1.200000000000e+01</min><max>1.200000000000e+01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002800" b="01DC" name="MiddleCurrent" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>0.000000000000e+00</min><max>1.000000014901e-01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002900" b="01E0" name="MiddleCurrent" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>0.000000000000e+00</min><max>1.000000014901e-01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002A00" b="01E4" name="MiddleCurrent" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>0.000000000000e+00</min><max>1.000000014901e-01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002B00" b="01E8" name="MiddleCurrent" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>0.000000000000e+00</min><max>1.000000014901e-01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002C00" b="01EC" name="MiddleVoltage" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>-1.200000000000e+01</min><max>1.200000000000e+01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002D00" b="01F0" name="MiddleVoltage" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>-1.200000000000e+01</min><max>1.200000000000e+01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002E00" b="01F4" name="MiddleVoltage" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>-1.200000000000e+01</min><max>1.200000000000e+01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82002F00" b="01F8" name="MiddleVoltage" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>-1.200000000000e+01</min><max>1.200000000000e+01</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003000" b="01FC" name="NumberOfTeeth" channelNo="0001" d="3C000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>0.000000000000e+00</min><max>3.600000000000e+03</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003100" b="0200" name="NumberOfTeeth" channelNo="0002" d="3C000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>0.000000000000e+00</min><max>3.600000000000e+03</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003200" b="0204" name="NumberOfTeeth" channelNo="0003" d="3C000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>0.000000000000e+00</min><max>3.600000000000e+03</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003300" b="0208" name="NumberOfTeeth" channelNo="0004" d="3C000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>0.000000000000e+00</min><max>3.600000000000e+03</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003400" b="020C" name="PulseDuration" channelNo="0001" d="201C0000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.250000018626e-02</scale><min>0.000000000000e+00</min></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003500" b="0210" name="PulseDuration" channelNo="0002" d="201C0000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.250000018626e-02</scale><min>0.000000000000e+00</min></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003600" b="0214" name="PulseDuration" channelNo="0003" d="201C0000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.250000018626e-02</scale><min>0.000000000000e+00</min></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003700" b="0218" name="PulseDuration" channelNo="0004" d="201C0000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.250000018626e-02</scale><min>0.000000000000e+00</min></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003800" b="021C" name="RemoveToothAtIndex" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>0.000000000000e+00</min><max>3.600000000000e+03</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003900" b="0220" name="RemoveToothAtIndex" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>0.000000000000e+00</min><max>3.600000000000e+03</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003A00" b="0224" name="RemoveToothAtIndex" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>0.000000000000e+00</min><max>3.600000000000e+03</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003B00" b="0228" name="RemoveToothAtIndex" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>0.000000000000e+00</min><max>3.600000000000e+03</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003C00" b="022C" name="RotationFreq" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>-3.000000000000e+02</min><max>3.000000000000e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003D00" b="0230" name="RotationFreq" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>-3.000000000000e+02</min><max>3.000000000000e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003E00" b="0234" name="RotationFreq" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>-3.000000000000e+02</min><max>3.000000000000e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82003F00" b="0238" name="RotationFreq" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>-3.000000000000e+02</min><max>3.000000000000e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004000" b="023C" name="SensorData" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>0.000000000000e+00</min><max>5.110000000000e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004100" b="0240" name="SensorData" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>0.000000000000e+00</min><max>5.110000000000e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004200" b="0244" name="SensorData" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>0.000000000000e+00</min><max>5.110000000000e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004300" b="0248" name="SensorData" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+<scaling>
+<standardScaling>
+<min>0.000000000000e+00</min><max>5.110000000000e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004400" b="024C" name="SensorSelect" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004500" b="0250" name="SensorSelect" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004600" b="0254" name="SensorSelect" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004700" b="0258" name="SensorSelect" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="false" >
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004800" b="025C" name="SlewRateCurrent" channelNo="0001" d="40420F00" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>9.999999974752e-07</min><max>1.000000000000e+00</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004900" b="0260" name="SlewRateCurrent" channelNo="0002" d="40420F00" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>9.999999974752e-07</min><max>1.000000000000e+00</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004A00" b="0264" name="SlewRateCurrent" channelNo="0003" d="40420F00" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>9.999999974752e-07</min><max>1.000000000000e+00</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004B00" b="0268" name="SlewRateCurrent" channelNo="0004" d="40420F00" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>9.999999974752e-07</scale><min>9.999999974752e-07</min><max>1.000000000000e+00</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004C00" b="026C" name="SlewRateVoltage" channelNo="0001" d="583E0F00" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>1.000000047497e-03</min><max>1.000000000000e+03</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004D00" b="0270" name="SlewRateVoltage" channelNo="0002" d="583E0F00" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>1.000000047497e-03</min><max>1.000000000000e+03</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004E00" b="0274" name="SlewRateVoltage" channelNo="0003" d="583E0F00" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>1.000000047497e-03</min><max>1.000000000000e+03</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82004F00" b="0278" name="SlewRateVoltage" channelNo="0004" d="583E0F00" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>1.000000047497e-03</min><max>1.000000000000e+03</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82005000" b="027C" name="StartAngle" channelNo="0001" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>0.000000000000e+00</min><max>3.599989929199e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82005100" b="0280" name="StartAngle" channelNo="0002" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>0.000000000000e+00</min><max>3.599989929199e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82005200" b="0284" name="StartAngle" channelNo="0003" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>0.000000000000e+00</min><max>3.599989929199e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+<writeValue id="82005300" b="0288" name="StartAngle" channelNo="0004" d="00000000" >
+<dataType>
+<integer bitLength="0020" unsigned="false" floatInput="true" >
+<scaling>
+<standardScaling>
+<scale>1.000000047497e-03</scale><min>0.000000000000e+00</min><max>3.599989929199e+02</max></standardScaling>
+</scaling>
+</integer>
+</dataType>
+</writeValue>
+</writeBlock>
+</values>
+</module></modules>

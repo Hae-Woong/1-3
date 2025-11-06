@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Version="5">
+  <RuntimeGroup Active="True" Name="Static Mapping">
+    <LogicalGroup Active="True" Name="VTMapping" IsCustomBinding="False">
+      <MappingRelation Active="True" DirectionVar1ToVar2="True" Offset="0" Factor="1" Assignment="OnChange" CyclicTimerValue="10">
+        <ValueObject1 ItemType="symSystemVariable">
+          <BusType>-1</BusType>
+          <DatabaseName>VTS::DIO_Output_HeadLight::CurBit</DatabaseName>
+          <Description />
+          <EnvVarName />
+          <FullName>VTS::DIO_Output_HeadLight::CurBit</FullName>
+          <ID>2</ID>
+          <MessageName />
+          <Name>VTS::DIO_Output_HeadLight::CurBit</Name>
+          <NeedsMessage>False</NeedsMessage>
+          <NetworkName />
+          <NodeName />
+          <SignalName />
+          <VariableType>1</VariableType>
+        </ValueObject1>
+        <ValueObject2 ItemType="symSystemVariable">
+          <BusType>-1</BusType>
+          <DatabaseName>VTS::VT_Lampa::Active</DatabaseName>
+          <Description />
+          <EnvVarName />
+          <FullName>VTS::VT_Lampa::Active</FullName>
+          <ID>2</ID>
+          <MessageName />
+          <Name>VTS::VT_Lampa::Active</Name>
+          <NeedsMessage>False</NeedsMessage>
+          <NetworkName />
+          <NodeName />
+          <SignalName />
+          <VariableType>1</VariableType>
+        </ValueObject2>
+      </MappingRelation>
+    </LogicalGroup>
+  </RuntimeGroup>
+</Mapping>
